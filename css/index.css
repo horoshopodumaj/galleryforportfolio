@@ -386,10 +386,6 @@ h6 {
   }
 }
 
-.projects {
-  display: flex;
-  flex-direction: column;
-}
 .projects__title {
   font-size: 3rem;
   font-weight: 700;
@@ -403,115 +399,26 @@ h6 {
     padding-bottom: 1.5rem;
   }
 }
-.projects__box {
-  margin: 3rem 0;
-}
-@media screen and (max-width: 619px) {
-  .projects__box {
-    margin: 0;
-  }
+
+.galleryItem {
+  display: inline-block;
+  width: 32.3333%;
+  padding-bottom: 36%;
+  height: 0;
+  position: relative;
 }
 
-.project {
-  display: flex;
-  flex-direction: column;
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
-.project__title {
-  font-weight: 700;
-  font-size: 2rem;
-  padding: 2rem 2rem 2rem 0;
-  color: var(--grey-3);
-}
-@media screen and (max-width: 619px) {
-  .project__title {
-    font-size: 1.6rem;
-    padding: 1.7rem 0;
-    text-align: center;
-  }
-}
-.project__body {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-@media screen and (max-width: 619px) {
-  .project__body {
-    flex-direction: column;
-  }
-}
-.project__img img {
+.cardImage {
   width: 290px;
   height: 290px;
   object-fit: contain;
-}
-.project__content {
-  display: block;
-  padding: 2rem 4rem;
-  padding-right: 0;
-  height: 100%;
-  text-align: justify;
-  overflow: hidden;
-}
-@media screen and (max-width: 619px) {
-  .project__content {
-    padding: 1.5rem 0;
-  }
-}
-@media screen and (max-width: 980px) and (min-width: 620px) {
-  .project__content {
-    padding: 0;
-  }
-}
-.project__content p {
-  font-family: "Lato", sans-serif;
-  font-size: 1.3rem;
-  line-height: 1.2;
-  color: var(--grey-3);
-}
-.project__buttons {
-  display: flex;
-  padding: 1rem 1rem 1rem 0;
-  gap: 1.2rem;
-}
-@media screen and (max-width: 619px) {
-  .project__buttons {
-    padding: 1rem 0;
-    justify-content: center;
-  }
-  .project__buttons form {
-    width: 100%;
-  }
-}
-.project__button {
-  font-family: "Montserrat", sans-serif;
-}
-.project__button:disabled {
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-._anim-show {
-  transform: translate(0px, 50%);
-  opacity: 0;
-  transition: all 1.2s ease 0s;
-}
-
-._anim-show-img {
-  transform: translate(0px, -30%);
-  opacity: 0;
-  transition: all 2s ease 0s;
-}
-
-._anim-show._active,
-._active ._anim-show {
-  transform: translate(0px, 0px);
-  opacity: 1;
-}
-
-._anim-show-img._active,
-._active ._anim-show-img {
-  transform: translate(0px, 0px);
-  opacity: 1;
 }
 
 .typed-cursor {
