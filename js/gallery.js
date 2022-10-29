@@ -86,6 +86,9 @@ class ExplositionGallery {
         this.explosionImageNodes = this.modalContainerNode.querySelectorAll(
             `.${explosionImageClassName}`
         );
+        this.explosionControlsNode = this.modalContainerNode.querySelector(
+            `.${explosionControlsClassName}`
+        );
     }
 
     events() {
@@ -238,14 +241,14 @@ class ExplositionGallery {
 
         this.setImageStyles(this.explosionNextShowingImageNodes[1], {
             top: 0.12 * modalHeight,
-            left: 0.73 * modalWidth,
+            left: 0.72 * modalWidth,
             opacity: 0.3,
             zIndex: 3,
             scale: 0.6,
         });
 
         this.setImageStyles(this.explosionNextShowingImageNodes[2], {
-            top: 0.43 * modalHeight,
+            top: 0.47 * modalHeight,
             left: 0.67 * modalWidth,
             opacity: 0.2,
             zIndex: 2,
@@ -259,6 +262,21 @@ class ExplositionGallery {
             zIndex: 1,
             scale: 0.4,
         });
+
+        this.explosionNextHiddenImageNodes.forEach((node) => {
+            this.setImageStyles(node, {
+                top: modalHeight,
+                left: 0.53 * modalWidth,
+                opacity: 0.1,
+                zIndex: 1,
+                scale: 0.4,
+            });
+        });
+
+        this.setControlStyles(this.explosionControlsNode, {
+            marginTop: (modalHeight - imageHeight * 1.2) / 2,
+            height: imageHeight * 1.2,
+        });
     }
 
     setImageStyles(element, { top, left, opacity, zIndex, scale }) {
@@ -271,6 +289,11 @@ class ExplositionGallery {
             1
         )}px, 0) scale(${scale})`;
         element.style.zIndex = zIndex;
+    }
+
+    setControlStyles(element, { marginTop, height }) {
+        element.style.marginTop = marginTop + "px";
+        element.style.height = height + "px";
     }
 }
 
