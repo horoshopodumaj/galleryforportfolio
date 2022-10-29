@@ -156,9 +156,20 @@
     right: 0;
     bottom: 0;
     display: block;
+    color: var(--white);
+    overflow: hidden;
+
+    &:hover,
+    &:visited {
+        color: var(--white);
+    }
+
     &Image {
         object-fit: cover;
         z-index: 1;
+        transform: scale(1);
+        transition: transform 3s;
+        padding: 40px;
     }
     &Content,
     &Hover,
@@ -172,9 +183,39 @@
 
     &Content {
         z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        box-sizing: border-box;
+        opacity: 0;
     }
 
     &Hover {
         z-index: 2;
+        background-color: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        // transition: all 0.3s;
+    }
+
+    &Title {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-align: center;
+        margin-bottom: 0.2em;
+        color: #daa35b;
+    }
+
+    &:hover {
+        .cardHover,
+        .cardContent {
+            opacity: 1;
+        }
+
+        .cardImage {
+            transform: scale(1.2);
+        }
     }
 }

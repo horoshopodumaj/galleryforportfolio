@@ -416,10 +416,18 @@ h6 {
   right: 0;
   bottom: 0;
   display: block;
+  color: var(--white);
+  overflow: hidden;
+}
+.card:hover, .card:visited {
+  color: var(--white);
 }
 .cardImage {
   object-fit: cover;
   z-index: 1;
+  transform: scale(1);
+  transition: transform 3s;
+  padding: 40px;
 }
 .cardContent, .cardHover, .cardImage {
   position: absolute;
@@ -430,9 +438,33 @@ h6 {
 }
 .cardContent {
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  opacity: 0;
 }
 .cardHover {
   z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+}
+.cardTitle {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-bottom: 0.2em;
+  color: #daa35b;
+}
+.card:hover .cardHover,
+.card:hover .cardContent {
+  opacity: 1;
+}
+.card:hover .cardImage {
+  transform: scale(1.2);
 }
 
 .typed-cursor {
