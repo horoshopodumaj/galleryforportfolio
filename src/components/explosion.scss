@@ -1,0 +1,43 @@
+.explosion {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--white);
+    min-width: 1023px;
+    min-height: 600px;
+    z-index: 999;
+    color: var(--black);
+    opacity: 0;
+
+    &_Opened {
+        display: block;
+    }
+    &_Opening {
+        display: block;
+    }
+
+    &Controls {
+        display: flex;
+        flex-direction: column;
+        width: 3rem;
+        top: 0;
+        position: absolute;
+        z-index: 7;
+        justify-content: center;
+        right: 22%;
+        height: 400px;
+    }
+
+    &Close {
+        position: absolute;
+        top: 0;
+        width: 3rem;
+        height: 3rem;
+        border: none;
+        background: none;
+        background-image: url("../../libs/explosion/images/close.svg");
+    }
+}

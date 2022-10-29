@@ -48,6 +48,7 @@ class ExplositionGallery {
         this.size = this.linkNodes.length;
 
         this.initModal();
+        this.events();
     }
 
     initModal() {
@@ -61,8 +62,48 @@ class ExplositionGallery {
                 <p class="${explosionDescriptionClassName}"></p>
             </div>
         </div>
+        <div class="${explosionControlsClassName}">
+            <button class="${explosionCloseClassName}"></button>
+            <div class="${explosionNavsClassName}">
+                <button class="${explosionNavClassName} ${explosionNavPrevClassName}"></button>
+                <div class="${explosionCouterClassName}">1/${this.size}</div>
+                <button class="${explosionNavClassName} ${explosionNavNextClassName}"></button>
+            </div>
+        </div>
+        <div class="${explosionImagesClassName}">
+            ${Array.from(this.linkNodes)
+                .map(
+                    (linkNode) => `
+                <img src="${linkNode.getAttribute("href")}" class="${explosionImageClassName}" />
+            `
+                )
+                .join("")}
+        </div>
         `;
+
+        document.body.appendChild(this.modalContainerNode);
     }
+
+    events() {
+        this.containerNode.addEventListener("click", this.activateGallery);
+    }
+
+    activateGallery = (event) => {
+        event.preventDefault();
+        const linkNode = event.target.closest("a");
+
+        if (!linkNode) {
+            return;
+        }
+
+        this.currentIndex = Array.from(this.linkNodes).indexOf(linkNode);
+        this.modalContainerNode.classList.add(explosionOpeningClassName);
+
+        fadeIn(this.modalContainerNode, () => {
+            this.modalContainerNode.classList.remove(explosionOpeningClassName);
+            this.modalContainerNode.classList.add(explosionOpenedClassName);
+        });
+    };
 }
 
 /**
