@@ -1,0 +1,48 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+
+    @media screen and (max-width: 620px) {
+        display: none;
+    }
+
+    &__lang {
+        border: 2px solid var(--grey-2);
+        height: 30px;
+        width: 70px;
+        color: var(--grey-2);
+        font-weight: 600;
+    }
+
+    &__item {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin: 1rem 2rem 0.5rem;
+        color: var(--white);
+        position: relative;
+        padding-bottom: 0.5rem;
+
+        @media screen and (min-width: 621px) and (max-width: 700px) {
+            margin: 1rem 1rem 0.5rem;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            background-color: var(--grey-2);
+            height: 3px;
+            transform: scaleX(0);
+            transition: transform 250ms ease-in-out;
+            bottom: 0px;
+        }
+
+        &:hover::after {
+            transform: scaleX(1);
+        }
+    }
+}

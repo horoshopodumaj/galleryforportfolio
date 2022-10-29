@@ -1,0 +1,33 @@
+{
+    "name": "resume",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/horoshopodumaj/resume.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/horoshopodumaj/resume/issues"
+    },
+    "homepage": "https://github.com/horoshopodumaj/resume#readme",
+    "devDependencies": {
+        "autoprefixer": "^10.4.12",
+        "postcss": "^8.4.17",
+        "postcss-advanced-variables": "^3.0.1",
+        "postcss-cli": "^10.0.0",
+        "postcss-import": "^15.0.0",
+        "postcss-nested": "^6.0.0",
+        "postcss-scss": "^4.0.5",
+        "sass": "^1.53.0"
+    },
+    "dependencies": {
+        "gsap": "^3.11.3",
+        "typed.js": "^2.0.12"
+    }
+}

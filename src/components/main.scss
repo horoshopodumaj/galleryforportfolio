@@ -1,0 +1,15 @@
+.main {
+    flex: 1;
+
+    &__aboutme {
+        padding: 14rem 0 21rem;
+        @media screen and (max-width: 619px) {
+            padding: 0;
+            margin: 16.5rem 0 2rem;
+        }
+    }
+
+    &__projects {
+        padding: 1rem 0;
+    }
+}

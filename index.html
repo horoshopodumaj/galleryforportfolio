@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+        <link rel="stylesheet" href="./css/index.css" />
+        <link rel="stylesheet" href="./css/all.css" />
+        <title>Murtazina Diana | Frontend Developer</title>
+        <script defer src="./js/burger-menu.js"></script>
+        <script src="libs/gsap/gsap.min.js" defer></script>
+    </head>
+    <body>
+        <div id="cursor"></div>
+        <div id="aura"></div>
+        <div class="page">
+            <header class="header" id="home">
+                <div class="page__box">
+                    <button class="burger-menu__open-btn" id="burger-menu-open">
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M3 12H21"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M3 6H21"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M3 18H21"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </button>
+                    <div class="burger-menu" id="burger-menu">
+                        <div class="burger-menu__header">
+                            <div class="burger-menu__container">
+                                <select
+                                    name="#"
+                                    id="select_burger"
+                                    class="navbar__lang burger-menu__lang"
+                                >
+                                    <option value="ru">RU</option>
+                                    <option value="en" selected>EN</option>
+                                </select>
+                                <button class="burger-menu__close-btn" id="burger-menu-close">
+                                    <svg
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M18 6L6 18"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                        <path
+                                            d="M6 6L18 18"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="burger-menu__body">
+                            <div class="burger-menu__container">
+                                <div class="burger-menu__menu">
+                                    <nav class="burger-menu__main">
+                                        <a href="#home">Home</a>
+                                        <a href="#aboutme">About me</a>
+                                        <a href="#project">My projects</a>
+                                        <a href="#contactme">Contact Me</a>
+                                        <!-- <a href="#">Resume</a> -->
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <nav>
+                        <ul class="navbar header__nav">
+                            <a href="#home">
+                                <li class="navbar__item lng-home">Home</li>
+                            </a>
+                            <a href="#aboutme">
+                                <li class="navbar__item lng-about">About me</li>
+                            </a>
+                            <a href="#project">
+                                <li class="navbar__item lng-projects">My projects</li>
+                            </a>
+                            <a href="#contactme">
+                                <li class="navbar__item lng-contact">Contact Me</li>
+                            </a>
+                            <select name="#" id="select" class="navbar__lang">
+                                <option value="ru">RU</option>
+                                <option value="en" selected>EN</option>
+                            </select>
+                        </ul>
+                    </nav>
+                    <div class="hi header__hi">
+                        <p class="lng-hi">Hi, my name is</p>
+                        <h1 class="lng-name">Diana Murtazina</h1>
+                        <h2>
+                            I am
+                            <span class="element"></span>
+                        </h2>
+                    </div>
+                </div>
+            </header>
+            <main class="main">
+                <div class="page__box">
+                    <section id="aboutme" class="aboutme main__aboutme">
+                        <img class="aboutme__img" src="./img/my_photo.jpg" alt="" />
+                        <div class="aboutme__content">
+                            <h2 class="aboutme__title lng-aboutme">About me</h2>
+                            <div class="aboutme__text lng-aboutmetext">
+                                Hi, my name is Diana Murtazina and I am a front-end developer.<br />
+                                My skills: <br />- HTML, <br />- CSS (SCSS, BEM, flex, grid),
+                                <br />- JavaScript, <br />- jQuery, <br />- React.
+                            </div>
+                        </div>
+                    </section>
+                    <section id="project" class="projects main__projects">
+                        <h2 class="projects__title lng-myprojects">My projects</h2>
+                        <div class="project projects__box">
+                            <h3 class="project__title lng-landing">Landing Page Layout</h3>
+                            <div class="project__body">
+                                <div class="project__img _anim-items _anim-no-hide">
+                                    <img class="_anim-show-img" src="./img/britlex.jpg" alt="" />
+                                </div>
+                                <div class="project__content _anim-items _anim-no-hide">
+                                    <p class="lng-landingtext _anim-show">
+                                        Layout of the landing site according to the layout for a
+                                        language school. The project uses BEM, scss, postcss. Images
+                                        in the project are inserted from svg-sprite.
+                                    </p>
+                                    <div class="project__buttons">
+                                        <form
+                                            action="https://github.com/horoshopodumaj/britlexLanding"
+                                            target="_blank"
+                                        >
+                                            <button class="button project__button">GitHub</button>
+                                        </form>
+                                        <form
+                                            action="https://britlex-landing.vercel.app/"
+                                            target="_blank"
+                                        >
+                                            <button class="button project__button">
+                                                Live site
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project projects__box">
+                            <h3 class="project__title lng-shop">Landing Page Layout</h3>
+                            <div class="project__body">
+                                <div class="project__img _anim-items _anim-no-hide">
+                                    <img class="_anim-show-img" src="./img/ashley.jpg" alt="" />
+                                </div>
+                                <div class="project__content _anim-items _anim-no-hide">
+                                    <p class="lng-shoptext _anim-show">
+                                        Layout of a landing page for a cosmetics store. The site is
+                                        checked using the BEM methodology.
+                                    </p>
+                                    <div class="project__buttons">
+                                        <form
+                                            action="https://github.com/horoshopodumaj/Ashley-Co"
+                                            target="_blank"
+                                        >
+                                            <button class="button project__button">GitHub</button>
+                                        </form>
+                                        <form
+                                            action="https://ashley-co.vercel.app/"
+                                            target="_blank"
+                                        >
+                                            <button class="button project__button">
+                                                Live site
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project projects__box">
+                            <h3 class="project__title lng-reus">Reusable Component Library</h3>
+                            <div class="project__body">
+                                <div class="project__img _anim-items _anim-no-hide">
+                                    <img
+                                        class="_anim-show-img"
+                                        src="./img/preview_reus.jpg"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="project__content _anim-items _anim-no-hide">
+                                    <p class="lng-reustext _anim-show">
+                                        The project was completed as part of a course on modern
+                                        layout. It is a library of reusable components, such as a
+                                        modal window, form elements, a calendar, a histogram, a
+                                        skeleton, and others. The layout is adapted for mobile,
+                                        tablet and desktop devices. The project uses BEM
+                                        methodology, scss preprocessor. Each component is presented
+                                        on a separate page, it is possible to include a dark theme.
+                                    </p>
+                                    <div class="project__buttons">
+                                        <form
+                                            action="https://github.com/horoshopodumaj/HTMLCSS"
+                                            target="_blank"
+                                        >
+                                            <button class="button project__button">GitHub</button>
+                                        </form>
+                                        <form
+                                            action="https://htmlcss-project.vercel.app/"
+                                            target="_blank"
+                                        >
+                                            <button class="button project__button">
+                                                Live site
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project projects__box">
+                            <h3 class="project__title lng-restaurant">Restaurant Website</h3>
+                            <div class="project__body">
+                                <div class="project__img _anim-items _anim-no-hide">
+                                    <img
+                                        class="_anim-show-img"
+                                        src="./img/preview_bangkok.jpg"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="project__content _anim-items _anim-no-hide">
+                                    <p class="lng-restauranttext _anim-show">
+                                        A restaurant with online order "Bangkok Express". The
+                                        project uses a ready-made layout. The use of javascript in
+                                        the project made it possible to implement: a carousel with
+                                        goods at the top of the site, a ribbon menu, a slider,
+                                        loading goods from the server, dynamic filtering of the list
+                                        of goods. As well as a basket of goods with dynamic
+                                        scrolling positioning, animation, modal window and order
+                                        form. The component architecture makes it easy to expand the
+                                        restaurant, complicate the interface and structure.
+                                    </p>
+                                    <div class="project__buttons">
+                                        <form
+                                            action="https://github.com/horoshopodumaj/jsbasic-20211014_murka8831"
+                                            target="_blank"
+                                        >
+                                            <button class="button project__button">GitHub</button>
+                                        </form>
+                                        <form
+                                            action="https://js-project-brown.vercel.app/"
+                                            target="_blank"
+                                        >
+                                            <button class="button project__button">
+                                                Live site
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project projects__box">
+                            <h3 class="project__title lng-mebel">Furniture Store</h3>
+                            <div class="project__body">
+                                <div class="project__img _anim-items _anim-no-hide">
+                                    <img src="./img/shop.jpg" alt="" class="_anim-show-img" />
+                                </div>
+                                <div class="project__content _anim-items _anim-no-hide">
+                                    <p class="lng-mebeltext _anim-show">
+                                        The furniture store's website is written in React. The site
+                                        has the ability to add products to the basket, sort by
+                                        product categories, manage the quantity of goods from the
+                                        basket. When you click on the product image, a modal window
+                                        with a product card appears. The site is not adaptive,
+                                        perhaps not yet.
+                                    </p>
+                                    <div class="project__buttons">
+                                        <form
+                                            action="https://github.com/horoshopodumaj/shop_on_React"
+                                            target="_blank"
+                                        >
+                                            <button class="button project__button">GitHub</button>
+                                        </form>
+                                        <form
+                                            action="https://shop-on-react-shop-qa4x.vercel.app/"
+                                            target="_blank"
+                                        >
+                                            <button class="button project__button">
+                                                Live site
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project projects__box">
+                            <h3 class="project__title lng-sneaker">Sneaker Store</h3>
+                            <div class="project__body">
+                                <div class="project__img _anim-items _anim-no-hide">
+                                    <img src="./img/sneaker.jpg" alt="" class="_anim-show-img" />
+                                </div>
+                                <div class="project__content _anim-items _anim-no-hide">
+                                    <p class="lng-sneakertext _anim-show">
+                                        The sneaker store using mockAPI is implemented on React.
+                                        Implemented the addition of goods to the cart, bookmarks.
+                                        Implemented a search for products on the site. The list of
+                                        products, products in the basket, bookmarks is loaded from
+                                        the server. The main page displays products already added to
+                                        the cart and bookmarks. The order has been sent to the
+                                        server, the list of ordered goods is loaded from the server
+                                        and displayed on a separate page. The total amount of goods
+                                        in the basket is displayed on the main page and displayed in
+                                        the basket.
+                                    </p>
+                                    <div class="project__buttons">
+                                        <form
+                                            action="https://github.com/horoshopodumaj/sneakers-shop"
+                                            target="_blank"
+                                        >
+                                            <button class="button project__button">GitHub</button>
+                                        </form>
+                                        <form
+                                            action="https://sneakers-shop-two.vercel.app/"
+                                            target="_blank"
+                                        >
+                                            <button class="button project__button">
+                                                Live site
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project projects__box">
+                            <h3 class="project__title lng-leasing">Car Leasing Calculator</h3>
+                            <div class="project__body">
+                                <div class="project__img _anim-items _anim-no-hide">
+                                    <img class="_anim-show-img" src="./img/calculator.jpg" alt="" />
+                                </div>
+                                <div class="project__content _anim-items _anim-no-hide">
+                                    <p class="lng-leasingText _anim-show">
+                                        A car leasing calculator is written in React. In each field,
+                                        you can enter a value either from the keyboard or using the
+                                        slider. When selecting a value using the slider, all numbers
+                                        are recalculated dynamically during the movement of the
+                                        slider. Each field has a maximum and minimum value — the
+                                        slider restricts the user in selecting data, and when
+                                        entering an incorrect value from the keyboard, it is reset
+                                        to the nearest correct number (maximum or minimum). A
+                                        request is generated by the “Apply for” button, which sends
+                                        all the calculator data to the backend. At the moment of
+                                        clicking on the button, the button is blocked from being
+                                        able to resend data for the duration of the request to the
+                                        backend, and a preloader is displayed inside the button.
+                                        Inputs and sliders are blocked for the time of sending.
+                                    </p>
+                                    <div class="project__buttons">
+                                        <form
+                                            action="https://github.com/horoshopodumaj/online_calculator"
+                                            target="_blank"
+                                        >
+                                            <button class="button project__button">GitHub</button>
+                                        </form>
+                                        <form
+                                            action="https://online-calculator-ten.vercel.app/"
+                                            target="_blank"
+                                        >
+                                            <button class="button project__button">
+                                                Live site
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project projects__box">
+                            <h3 class="project__title lng-reactproject">Social Network</h3>
+                            <div class="project__body">
+                                <div class="project__img _anim-items _anim-no-hide">
+                                    <img
+                                        class="_anim-show-img"
+                                        src="./img/image-not-found.jpg"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="project__content _anim-items _anim-no-hide">
+                                    <p class="lng-reactprojecttext _anim-show">
+                                        There will be a social network written in React using the
+                                        Redux library. In the meantime, you can visit my GitHub and
+                                        watch me learn React.
+                                    </p>
+                                    <div class="project__buttons">
+                                        <form
+                                            action="https://github.com/horoshopodumaj/social-network"
+                                            target="_blank"
+                                        >
+                                            <button class="button project__button">GitHub</button>
+                                        </form>
+                                        <form action="#" target="_blank">
+                                            <button class="button project__button" disabled>
+                                                Live site
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="page__box">
+                    <section id="contactme" class="footer__contact">
+                        <h2 class="footer__title lng-contactme">Contact me</h2>
+                        <p class="lng-opportunities">
+                            I'm currently looking for opportunities, my inbox is always open whether
+                            for hiring me or just to talk. I'll answer your email!
+                        </p>
+                        <h3 class="footer__email">
+                            <a href="mailto:dianamurtazina.job@gmail.com" class="lng-writeforme">
+                                Let's get in touch</a
+                            >
+                        </h3>
+                    </section>
+                    <section class="footer__links">
+                        <a href="https://github.com/horoshopodumaj" target="_blank">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/diana-murtazina/" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </section>
+                    <section class="footer__basement">
+                        <p>Designed &amp; Built by Diana Murtazina ©2022</p>
+                    </section>
+                    <div class="footer__up">
+                        <a href="#home" class="footer__top">
+                            <i class="fa-solid fa-angles-up"></i>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="./js/lang.js"></script>
+        <script src="./js/app.js"></script>
+        <script src="./js/typed.min.js"></script>
+        <script src="./js/index.js"></script>
+        <script src="./js/cursor.js"></script>
+        <script src="./js/anim.js"></script>
+    </body>
+</html>
