@@ -690,9 +690,13 @@ h6 {
 }
 .explosion_Opened {
   display: block;
+  overflow: auto;
 }
 .explosion_Opening {
   display: block;
+}
+.explosion_Opening .explosionImage {
+  transition: none;
 }
 .explosionImage {
   position: absolute;

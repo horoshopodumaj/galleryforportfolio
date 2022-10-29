@@ -14,9 +14,14 @@
 
     &_Opened {
         display: block;
+        overflow: auto;
     }
     &_Opening {
         display: block;
+
+        .explosionImage {
+            transition: none;
+        }
     }
     &Image {
         position: absolute;

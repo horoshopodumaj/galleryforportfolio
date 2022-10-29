@@ -82,6 +82,10 @@ class ExplositionGallery {
         `;
 
         document.body.appendChild(this.modalContainerNode);
+
+        this.explosionImageNodes = this.modalContainerNode.querySelectorAll(
+            `.${explosionImageClassName}`
+        );
     }
 
     events() {
@@ -92,7 +96,11 @@ class ExplositionGallery {
         event.preventDefault();
         const linkNode = event.target.closest("a");
 
-        if (!linkNode) {
+        if (
+            !linkNode ||
+            this.modalContainerNode.classList.contains(explosionOpenedClassName) ||
+            this.modalContainerNode.classList.contains(explosionOpeningClassName)
+        ) {
             return;
         }
 
@@ -102,8 +110,65 @@ class ExplositionGallery {
         fadeIn(this.modalContainerNode, () => {
             this.modalContainerNode.classList.remove(explosionOpeningClassName);
             this.modalContainerNode.classList.add(explosionOpenedClassName);
+            this.switchChanges();
         });
+
+        this.setInitSizesToImages();
+        this.setInitPositionsToImages();
     };
+
+    setInitSizesToImages() {
+        this.linkNodes.forEach((linkNode, index) => {
+            const data = linkNode.getBoundingClientRect();
+            this.explosionImageNodes[index].style.width = data.width + "px";
+            this.explosionImageNodes[index].style.height = data.height + "px";
+            this.explosionImageNodes[index].style.padding = "40px";
+        });
+    }
+
+    setInitPositionsToImages() {
+        this.linkNodes.forEach((linkNode, index) => {
+            const data = linkNode.getBoundingClientRect();
+            this.setPositionStyles(this.explosionImageNodes[index], data.left, data.top);
+        });
+    }
+
+    setPositionStyles(element, x, y) {
+        element.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0)`;
+    }
+
+    switchChanges() {
+        // установить фото на нужные места
+        // установить состояния кнопок
+        // изменить счетчик
+        // установить/изменить описание
+
+        this.setCurrentState();
+    }
+
+    setCurrentState() {
+        this.explosionPrevHiddenImageNodes = [];
+        this.explosionPrevShowingImageNodes = [];
+        this.explosionActiveImageNodes = [];
+        this.explosionNextShowingImageNodes = [];
+        this.explosionNextHiddenImageNodes = [];
+
+        this.explosionImageNodes.forEach((imageNode, index) => {
+            if (index + this.showingCount < this.currentIndex) {
+                this.explosionPrevHiddenImageNodes.unshift(imageNode);
+            } else if (index < this.currentIndex) {
+                this.explosionPrevShowingImageNodes.unshift(imageNode);
+            } else if (index === this.currentIndex) {
+                this.explosionActiveImageNodes.push(imageNode);
+            } else if (index <= this.currentIndex + this.showingCount) {
+                this.explosionNextShowingImageNodes.push(imageNode);
+            } else {
+                this.explosionNextHiddenImageNodes.push(imageNode);
+            }
+        });
+
+        console.log(this.explosionNextShowingImageNodes);
+    }
 }
 
 /**
