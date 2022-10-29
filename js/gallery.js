@@ -43,7 +43,7 @@ class ExplositionGallery {
         this.minWidth = 1023;
         this.minHeight = 600;
         this.padding = 2 * 16;
-        this.showingCount = 3;
+        this.showingCount = 4;
         this.currentIndex = 0;
         this.size = this.linkNodes.length;
 
@@ -167,7 +167,44 @@ class ExplositionGallery {
             }
         });
 
-        console.log(this.explosionNextShowingImageNodes);
+        this.setGalleryStyles();
+    }
+
+    setGalleryStyles() {
+        const imageWidth = this.linkNodes[0].offsetWidth;
+        const imageHeight = this.linkNodes[0].offsetHeight;
+        const modalWidth = Math.max(this.minWidth, window.innerWidth);
+        const modalHeight = Math.max(this.minHeight, window.innerHeight);
+
+        this.explosionPrevHiddenImageNodes.forEach((node) => {
+            this.setImageStyles(node, {
+                top: -modalHeight,
+                left: 0.31 * modalWidth,
+                opacity: 0.1,
+                zIndex: 1,
+                scale: 0.4,
+            });
+        });
+
+        this.setImageStyles(this.explosionPrevShowingImageNodes[0], {
+            top: modalHeight - imageHeight,
+            left: 0.32 * modalWidth,
+            opacity: 0.4,
+            zIndex: 4,
+            scale: 0.75,
+        });
+    }
+
+    setImageStyles(element, { top, left, opacity, zIndex, scale }) {
+        if (!element) {
+            return;
+        }
+
+        element.style.opacity = opacity;
+        element.style.transform = `translate3d(${left.toFixed(1)}px, ${top.toFixed(
+            1
+        )}px, 0) scale(${scale})`;
+        element.style.zIndex = zIndex;
     }
 }
 
