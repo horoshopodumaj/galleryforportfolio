@@ -15,6 +15,9 @@ const explosionSummaryContentClassName = "explosionSummaryContent";
 const explosionTitleClassName = "explosionTitle";
 const explosionDescriptionClassName = "explosionDescription";
 const explosionImageClassName = "explosionImage";
+const explosionGitClassName = "explosionGit";
+const explosionSiteClassName = "explosionSite";
+const explosionButtonSiteClassName = "explosionButton";
 
 const explosionCloseClassName = "explosionClose";
 const explosionNavsClassName = "explosionNavs";
@@ -54,12 +57,16 @@ class ExplositionGallery {
                 description: `Layout of the landing site according to the layout for a
                 language school. The project uses BEM, scss, postcss. Images
                 in the project are inserted from svg-sprite.`,
+                git: `https://github.com/horoshopodumaj/britlexLanding`,
+                site: `https://britlex-landing.vercel.app/`,
             },
             {
                 src: "/images/gallery/2.jpg",
                 title: "Landing Page Layout",
                 description: `Layout of a landing page for a cosmetics store. The site is
                 checked using the BEM methodology.`,
+                git: `https://github.com/horoshopodumaj/Ashley-Co/`,
+                site: `https://ashley-co.vercel.app/`,
             },
             {
                 src: "/images/gallery/3.jpg",
@@ -71,6 +78,8 @@ class ExplositionGallery {
                 tablet and desktop devices. The project uses BEM
                 methodology, scss preprocessor. Each component is presented
                 on a separate page, it is possible to include a dark theme.`,
+                git: `https://github.com/horoshopodumaj/HTMLCSS`,
+                site: `https://htmlcss-project.vercel.app/`,
             },
             {
                 src: "/images/gallery/4.jpg",
@@ -84,6 +93,8 @@ class ExplositionGallery {
                 scrolling positioning, animation, modal window and order
                 form. The component architecture makes it easy to expand the
                 restaurant, complicate the interface and structure.`,
+                git: `https://github.com/horoshopodumaj/jsbasic-20211014_murka8831`,
+                site: `https://js-project-brown.vercel.app/`,
             },
             {
                 src: "/images/gallery/5.jpg",
@@ -94,6 +105,8 @@ class ExplositionGallery {
                 basket. When you click on the product image, a modal window
                 with a product card appears. The site is not adaptive,
                 perhaps not yet.`,
+                git: `https://github.com/horoshopodumaj/shop_on_React`,
+                site: `https://shop-on-react-shop-qa4x.vercel.app/`,
             },
             {
                 src: "/images/gallery/6.jpg",
@@ -108,6 +121,8 @@ class ExplositionGallery {
                 and displayed on a separate page. The total amount of goods
                 in the basket is displayed on the main page and displayed in
                 the basket.`,
+                git: `https://github.com/horoshopodumaj/sneakers-shop`,
+                site: `https://sneakers-shop-two.vercel.app/`,
             },
             {
                 src: "/images/gallery/7.jpg",
@@ -125,6 +140,8 @@ class ExplositionGallery {
                 clicking on the button, the button is blocked from being
                 able to resend data for the duration of the request to the
                 backend, and a preloader is displayed inside the but`,
+                git: `https://github.com/horoshopodumaj/online_calculator`,
+                site: `https://online-calculator-ten.vercel.app/`,
             },
             {
                 src: "/images/gallery/8.jpg",
@@ -132,6 +149,8 @@ class ExplositionGallery {
                 description: `There will be a social network written in React using the
                 Redux library. In the meantime, you can visit my GitHub and
                 watch me learn React.`,
+                git: `https://github.com/horoshopodumaj/social-network`,
+                site: `#`,
             },
         ];
 
@@ -148,6 +167,23 @@ class ExplositionGallery {
             <div class="${explosionSummaryContentClassName}">
                 <h2 class="${explosionTitleClassName}"></h2>
                 <p class="${explosionDescriptionClassName}"></p>
+                <div class="project__buttons">
+                    <form
+                    class="${explosionGitClassName}"
+                        target="_blank"
+                    >
+                        <button class="button project__button">GitHub</button>
+                    </form>
+                    <form
+                    class="${explosionSiteClassName}"
+                        target="_blank"
+                    >
+                        <button class="${explosionButtonSiteClassName}">
+                            Live site
+                        </button>
+                    </form>
+                </div>
+
             </div>
         </div>
         <div class="${explosionControlsClassName}">
@@ -191,6 +227,13 @@ class ExplositionGallery {
         );
         this.explosionDescriptionNode = this.modalContainerNode.querySelector(
             `.${explosionDescriptionClassName}`
+        );
+        this.explosionGitNode = this.modalContainerNode.querySelector(`.${explosionGitClassName}`);
+        this.explosionSiteNode = this.modalContainerNode.querySelector(
+            `.${explosionSiteClassName}`
+        );
+        this.explosionButtonSiteNode = this.modalContainerNode.querySelector(
+            `.${explosionButtonSiteClassName}`
         );
     }
 
@@ -259,6 +302,11 @@ class ExplositionGallery {
         const content = this.data[this.currentIndex];
         this.explosionTitleNode.innerText = content.title;
         this.explosionDescriptionNode.innerText = content.description;
+        this.explosionGitNode.setAttribute("action", `${content.git}`);
+        this.explosionSiteNode.setAttribute("action", `${content.site}`);
+        {
+            content.site === "#" && this.explosionButtonSiteNode.classList.add("disabled");
+        }
     }
 
     switchDisabledNav() {
