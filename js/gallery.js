@@ -89,6 +89,15 @@ class ExplositionGallery {
         this.explosionControlsNode = this.modalContainerNode.querySelector(
             `.${explosionControlsClassName}`
         );
+        this.explosionNavPrevNode = this.modalContainerNode.querySelector(
+            `.${explosionNavPrevClassName}`
+        );
+        this.explosionNavNextNode = this.modalContainerNode.querySelector(
+            `.${explosionNavNextClassName}`
+        );
+        this.explosionCounterNode = this.modalContainerNode.querySelector(
+            `.${explosionCouterClassName}`
+        );
     }
 
     events() {
@@ -147,6 +156,28 @@ class ExplositionGallery {
         // установить/изменить описание
 
         this.setCurrentState();
+        this.switchDisabledNav();
+        this.changeCounter();
+    }
+
+    switchDisabledNav() {
+        if (this.currentIndex === 0 && !this.explosionNavPrevNode.disabled) {
+            this.explosionNavPrevNode.disabled = true;
+        }
+
+        if (this.currentIndex > 0 && this.explosionNavPrevNode.disabled) {
+            this.explosionNavPrevNode.disabled = false;
+        }
+        if (this.currentIndex === this.size - 1 && !this.explosionNavNextNode.disabled) {
+            this.explosionNavNextNode.disabled = true;
+        }
+        if (this.currentIndex < this.size - 1 && this.explosionNavNextNode.disabled) {
+            this.explosionNavNextNode.disabled = false;
+        }
+    }
+
+    changeCounter() {
+        this.explosionCounterNode.innerText = `${this.currentIndex + 1}/${this.size}`;
     }
 
     setCurrentState() {
