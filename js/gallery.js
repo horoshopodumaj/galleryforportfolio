@@ -249,7 +249,36 @@ class ExplositionGallery {
         this.containerNode.addEventListener("click", this.activateGallery);
         this.explosionNavsNode.addEventListener("click", this.switchImage);
         this.explosionCloseNode.addEventListener("click", this.closeGallery);
+        window.addEventListener("keyup", this.keyDown);
+        window.addEventListener("scroll", this.scrollWindowOpenedModal);
     }
+
+    scrollWindowOpenedModal = () => {
+        if (this.modalContainerNode.classList.contains(explosionOpenedClassName)) {
+            document.body.style.overflow = "hidden";
+        }
+    };
+
+    keyDown = (event) => {
+        if (this.modalContainerNode.classList.contains(explosionOpenedClassName)) {
+            if (event.key == "Escape" || event.key === "Esc" || event.keyCode === 27) {
+                this.closeGallery();
+            }
+
+            if ((event.key == "ArrowDown" || event.keyCode === 40) && this.currentIndex > 0) {
+                this.currentIndex -= 1;
+                this.switchChanges(true);
+            }
+
+            if (
+                (event.key == "ArrowUp" || event.keyCode === 38) &&
+                this.currentIndex < this.size - 1
+            ) {
+                this.currentIndex += 1;
+                this.switchChanges(true);
+            }
+        }
+    };
 
     resize = () => {
         if (this.modalContainerNode.classList.contains(explosionOpenedClassName)) {
@@ -269,6 +298,8 @@ class ExplositionGallery {
         fadeOut(this.modalContainerNode, () => {
             this.modalContainerNode.classList.remove(explosionOpenedClassName);
         });
+
+        document.body.style.overflow = "";
     };
 
     switchImage = (event) => {
