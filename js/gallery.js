@@ -47,6 +47,34 @@ class ExplositionGallery {
         this.currentIndex = 0;
         this.size = this.linkNodes.length;
 
+        this.data = [
+            {
+                src: "/images/gallery/1.jpg",
+                title: "Spider plant",
+                description: "Pet friendly",
+            },
+            {
+                src: "/images/gallery/2.jpg",
+                title: "Pilea Peperomioides",
+                description: "Ideal for beginners",
+            },
+            {
+                src: "/images/gallery/3.jpg",
+                title: "Swiss Cheese Plant",
+                description: "Toxic to pets",
+            },
+            {
+                src: "/images/gallery/4.jpg",
+                title: "The Unkillables plant bundle",
+                description: "Outdoor plant",
+            },
+            {
+                src: "/images/gallery/5.jpg",
+                title: "Pineapple plant",
+                description: "Indoor plant",
+            },
+        ];
+
         this.initModal();
         this.events();
     }
@@ -97,6 +125,12 @@ class ExplositionGallery {
         );
         this.explosionCounterNode = this.modalContainerNode.querySelector(
             `.${explosionCouterClassName}`
+        );
+        this.explosionTitleNode = this.modalContainerNode.querySelector(
+            `.${explosionTitleClassName}`
+        );
+        this.explosionDescriptionNode = this.modalContainerNode.querySelector(
+            `.${explosionDescriptionClassName}`
         );
     }
 
@@ -158,6 +192,13 @@ class ExplositionGallery {
         this.setCurrentState();
         this.switchDisabledNav();
         this.changeCounter();
+        this.changeSummary();
+    }
+
+    changeSummary() {
+        const content = this.data[this.currentIndex];
+        this.explosionTitleNode.innerText = content.title;
+        this.explosionDescriptionNode.innerText = content.description;
     }
 
     switchDisabledNav() {
