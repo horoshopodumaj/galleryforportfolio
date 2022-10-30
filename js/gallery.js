@@ -231,7 +231,7 @@ class ExplositionGallery {
             }
 
             if ((event.key == "ArrowDown" || event.keyCode === 40) && this.currentIndex > 0) {
-                this.currentIndex -= 1;
+                this.currentIndex += 1;
                 this.switchChanges(true);
             }
 
@@ -239,7 +239,7 @@ class ExplositionGallery {
                 (event.key == "ArrowUp" || event.keyCode === 38) &&
                 this.currentIndex < this.size - 1
             ) {
-                this.currentIndex += 1;
+                this.currentIndex -= 1;
                 this.switchChanges(true);
             }
         }
@@ -344,6 +344,8 @@ class ExplositionGallery {
 
         if (hasSummaryAnimation) {
             this.explosionSummaryContentNode.style.opacity = 0;
+            this.explosionTitleNode.style.opacity = 0;
+            this.explosionDescriptionNode.style.opacity = 0;
             setTimeout(() => {
                 this.explosionTitleNode.innerText = content.title;
                 this.explosionDescriptionNode.innerText = content.description;
@@ -356,6 +358,8 @@ class ExplositionGallery {
                 }
 
                 this.explosionSummaryContentNode.style.opacity = 1;
+                this.explosionTitleNode.style.opacity = 1;
+                this.explosionDescriptionNode.style.opacity = 1;
             }, 300);
         } else {
             this.explosionTitleNode.innerText = content.title;
