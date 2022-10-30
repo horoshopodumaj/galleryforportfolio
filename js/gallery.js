@@ -43,7 +43,7 @@ class ExplositionGallery {
         this.containerNode = elementNode;
         this.linkNodes = elementNode.querySelectorAll(this.options.linkClass);
 
-        this.minWidth = 1023;
+        this.minWidth = 320;
         this.minHeight = 600;
         this.padding = 2 * 16;
         this.showingCount = 4;
@@ -54,93 +54,56 @@ class ExplositionGallery {
             {
                 src: "/images/gallery/1.jpg",
                 title: "Landing Page Layout",
-                description: `Layout of the landing site according to the layout for a
-                language school. The project uses BEM, scss, postcss. Images
-                in the project are inserted from svg-sprite.`,
+                description: `Layout of the landing site according to the layout for a language school. The project uses BEM, scss, postcss. Images in the project are inserted from svg-sprite.`,
                 git: `https://github.com/horoshopodumaj/britlexLanding`,
                 site: `https://britlex-landing.vercel.app/`,
             },
             {
                 src: "/images/gallery/2.jpg",
                 title: "Landing Page Layout",
-                description: `Layout of a landing page for a cosmetics store. The site is
-                checked using the BEM methodology.`,
+                description: `Layout of a landing page for a cosmetics store. The site is checked using the BEM methodology.`,
                 git: `https://github.com/horoshopodumaj/Ashley-Co/`,
                 site: `https://ashley-co.vercel.app/`,
             },
             {
                 src: "/images/gallery/3.jpg",
                 title: "Reusable Component Library",
-                description: `The project was completed as part of a course on modern
-                layout. It is a library of reusable components, such as a
-                modal window, form elements, a calendar, a histogram, a
-                skeleton, and others. The layout is adapted for mobile,
-                tablet and desktop devices. The project uses BEM
-                methodology, scss preprocessor. Each component is presented
-                on a separate page, it is possible to include a dark theme.`,
+                description: `The project was completed as part of a course on modern layout. It is a library of reusable components, such as a modal window, form elements, a calendar, a histogram, a skeleton, and others. The layout is adapted for mobile, tablet and desktop devices. The project uses BEM methodology, scss preprocessor. Each component is presented on a separate page, it is possible to include a dark theme.`,
                 git: `https://github.com/horoshopodumaj/HTMLCSS`,
                 site: `https://htmlcss-project.vercel.app/`,
             },
             {
                 src: "/images/gallery/4.jpg",
                 title: "Restaurant Website",
-                description: `A restaurant with online order "Bangkok Express". The
-                project uses a ready-made layout. The use of javascript in
-                the project made it possible to implement: a carousel with
-                goods at the top of the site, a ribbon menu, a slider,
-                loading goods from the server, dynamic filtering of the list
-                of goods. As well as a basket of goods with dynamic
-                scrolling positioning, animation, modal window and order
-                form. The component architecture makes it easy to expand the
-                restaurant, complicate the interface and structure.`,
+                description: `A restaurant with online order "Bangkok Express". The project uses a ready-made layout. The use of javascript in the project made it possible to implement: a carousel with goods at the top of the site, a ribbon menu, a slider, loading goods from the server, dynamic filtering of the list of goods. As well as a basket of goods with dynamic scrolling positioning, animation, modal window and order form. The component architecture makes it easy to expand the restaurant, complicate the interface and structure.`,
                 git: `https://github.com/horoshopodumaj/jsbasic-20211014_murka8831`,
                 site: `https://js-project-brown.vercel.app/`,
             },
             {
                 src: "/images/gallery/5.jpg",
                 title: "Furniture Store",
-                description: `The furniture store's website is written in React. The site
-                has the ability to add products to the basket, sort by
-                product categories, manage the quantity of goods from the
-                basket. When you click on the product image, a modal window
-                with a product card appears. The site is not adaptive,
-                perhaps not yet.`,
+                description: `The furniture store's website is written in React. The site has the ability to add products to the basket, sort by product categories, manage the quantity of goods from the basket. When you click on the product image, a modal window with a product card appears. The site is not adaptive, perhaps not yet.`,
                 git: `https://github.com/horoshopodumaj/shop_on_React`,
                 site: `https://shop-on-react-shop-qa4x.vercel.app/`,
             },
             {
                 src: "/images/gallery/6.jpg",
                 title: "Sneaker Store",
-                description: `The sneaker store using mockAPI is implemented on React.
-                Implemented the addition of goods to the cart, bookmarks.
-                Implemented a search for products on the site. The list of
-                products, products in the basket, bookmarks is loaded from
-                the server. The main page displays products already added to
-                the cart and bookmarks. The order has been sent to the
-                server, the list of ordered goods is loaded from the server
-                and displayed on a separate page. The total amount of goods
-                in the basket is displayed on the main page and displayed in
-                the basket.`,
+                description: `The sneaker store using mockAPI is implemented on React. Implemented the addition of goods to the cart, bookmarks. Implemented a search for products on the site. The list of products, products in the basket, bookmarks is loaded from the server. The main page displays products already added to the cart and bookmarks. The order has been sent to the server, the list of ordered goods is loaded from the server and displayed on a separate page. The total amount of goods in the basket is displayed on the main page and displayed in the basket.`,
                 git: `https://github.com/horoshopodumaj/sneakers-shop`,
                 site: `https://sneakers-shop-two.vercel.app/`,
             },
             {
                 src: "/images/gallery/7.jpg",
                 title: "Car Leasing Calculator",
-                description: `A car leasing calculator is written in React. In each field, you can enter a value either from the keyboard or using the slider. When selecting a value using the slider, all numbers
-                are recalculated dynamically during the movement of the slider. Each field has a maximum and minimum value — the slider restricts the user in selecting data, and when
-                entering an incorrect value from the keyboard, it is reset to the nearest correct number (maximum or minimum). A request is generated by the “Apply for” button, which sends
-                all the calculator data to the backend. At the moment of clicking on the button, the button is blocked from being able to resend data for the duration of the request to the
-                backend, and a preloader is displayed inside the button. Inputs and sliders are blocked for the time of sending`,
+                description: `A car leasing calculator is written in React. In each field, you can enter a value either from the keyboard or using the slider. When selecting a value using the slider, all numbers are recalculated dynamically during the movement of the slider. Each field has a maximum and minimum value — the slider restricts the user in selecting data, and when entering an incorrect value from the keyboard, it is reset to the nearest correct number (maximum or minimum). A request is generated by the “Apply for” button, which sends all the calculator data to the backend. At the moment of clicking on the button, the button is blocked from being able to resend data for the duration of the request to the backend, and a preloader is displayed inside the button. Inputs and sliders are blocked for the time of sending.`,
                 git: `https://github.com/horoshopodumaj/online_calculator`,
                 site: `https://online-calculator-ten.vercel.app/`,
             },
             {
                 src: "/images/gallery/8.jpg",
                 title: "Social Network",
-                description: `There will be a social network written in React using the
-                Redux library. In the meantime, you can visit my GitHub and
-                watch me learn React.`,
+                description: `There will be a social network written in React using the Redux library. In the meantime, you can visit my GitHub and watch me learn React.`,
                 git: `https://github.com/horoshopodumaj/social-network`,
                 site: `#`,
             },
@@ -155,10 +118,12 @@ class ExplositionGallery {
         this.modalContainerNode.className = explosionClassName;
 
         this.modalContainerNode.innerHTML = `
+        <h2 class="${explosionTitleClassName}"></h2>
+        <p class="${explosionDescriptionClassName}"></p>
         <div class="${explosionSummaryClassName}">
             <div class="${explosionSummaryContentClassName}">
-                <h2 class="${explosionTitleClassName}"></h2>
-                <p class="${explosionDescriptionClassName}"></p>
+                
+                
                 <div class="project__buttons">
                     <form
                     class="${explosionGitClassName}"
@@ -352,7 +317,7 @@ class ExplositionGallery {
             const data = linkNode.getBoundingClientRect();
             this.explosionImageNodes[index].style.width = data.width + "px";
             this.explosionImageNodes[index].style.height = data.height + "px";
-            this.explosionImageNodes[index].style.padding = "40px";
+            //this.explosionImageNodes[index].style.padding = "40px";
         });
     }
 
@@ -398,7 +363,9 @@ class ExplositionGallery {
             this.explosionGitNode.setAttribute("action", `${content.git}`);
             this.explosionSiteNode.setAttribute("action", `${content.site}`);
             {
-                content.site === "#" && this.explosionButtonSiteNode.classList.add("disabled");
+                content.site === "#"
+                    ? this.explosionButtonSiteNode.classList.add("disabled")
+                    : this.explosionSiteNode.setAttribute("action", `${content.site}`);
             }
         }
     }
@@ -452,115 +419,189 @@ class ExplositionGallery {
         const imageHeight = this.linkNodes[0].offsetHeight;
         const modalWidth = Math.max(this.minWidth, window.innerWidth);
         const modalHeight = Math.max(this.minHeight, window.innerHeight);
+        const screenWidth = window.screen.width;
 
-        this.explosionPrevHiddenImageNodes.forEach((node) => {
-            this.setImageStyles(node, {
-                top: -modalHeight,
+        if (screenWidth >= 800) {
+            this.explosionPrevHiddenImageNodes.forEach((node) => {
+                this.setImageStyles(node, {
+                    top: -modalHeight,
+                    left: 0.29 * modalWidth,
+                    opacity: 0.1,
+                    zIndex: 1,
+                    scale: 0.4,
+                    border: `1px solid black`,
+                });
+            });
+
+            this.setImageStyles(this.explosionPrevShowingImageNodes[0], {
+                top: modalHeight - imageHeight,
+                left: 0.25 * modalWidth,
+                opacity: 0.4,
+                zIndex: 4,
+                scale: 0.75,
+                border: `1px solid black`,
+            });
+
+            this.setImageStyles(this.explosionPrevShowingImageNodes[1], {
+                top: 0.35 * modalHeight,
+                left: 0.06 * modalWidth,
+                opacity: 0.3,
+                zIndex: 3,
+                scale: 0.6,
+                border: `1px solid black`,
+            });
+
+            this.setImageStyles(this.explosionPrevShowingImageNodes[2], {
+                top: 0 * modalHeight,
+                left: 0.15 * modalWidth,
+                opacity: 0.2,
+                zIndex: 2,
+                scale: 0.5,
+                border: `1px solid black`,
+            });
+
+            this.setImageStyles(this.explosionPrevShowingImageNodes[3], {
+                top: -0.3 * modalHeight,
                 left: 0.29 * modalWidth,
                 opacity: 0.1,
                 zIndex: 1,
                 scale: 0.4,
                 border: `1px solid black`,
             });
-        });
 
-        this.setImageStyles(this.explosionPrevShowingImageNodes[0], {
-            top: modalHeight - imageHeight,
-            left: 0.25 * modalWidth,
-            opacity: 0.4,
-            zIndex: 4,
-            scale: 0.75,
-            border: `1px solid black`,
-        });
+            this.explosionActiveImageNodes.forEach((node) => {
+                this.setImageStyles(node, {
+                    top: (modalHeight - imageHeight) / 2,
+                    left: (modalWidth - imageWidth) / 2,
+                    opacity: 1,
+                    zIndex: 5,
+                    scale: 1.2,
+                    border: `1px solid black`,
+                });
+            });
 
-        this.setImageStyles(this.explosionPrevShowingImageNodes[1], {
-            top: 0.35 * modalHeight,
-            left: 0.06 * modalWidth,
-            opacity: 0.3,
-            zIndex: 3,
-            scale: 0.6,
-            border: `1px solid black`,
-        });
-
-        this.setImageStyles(this.explosionPrevShowingImageNodes[2], {
-            top: 0 * modalHeight,
-            left: 0.15 * modalWidth,
-            opacity: 0.2,
-            zIndex: 2,
-            scale: 0.5,
-            border: `1px solid black`,
-        });
-
-        this.setImageStyles(this.explosionPrevShowingImageNodes[3], {
-            top: -0.3 * modalHeight,
-            left: 0.29 * modalWidth,
-            opacity: 0.1,
-            zIndex: 1,
-            scale: 0.4,
-            border: `1px solid black`,
-        });
-
-        this.explosionActiveImageNodes.forEach((node) => {
-            this.setImageStyles(node, {
-                top: (modalHeight - imageHeight) / 2,
-                left: (modalWidth - imageWidth) / 2,
-                opacity: 1,
-                zIndex: 5,
-                scale: 1.2,
+            this.setImageStyles(this.explosionNextShowingImageNodes[0], {
+                top: 0,
+                left: 0.52 * modalWidth,
+                opacity: 0.4,
+                zIndex: 4,
+                scale: 0.75,
                 border: `1px solid black`,
             });
-        });
 
-        this.setImageStyles(this.explosionNextShowingImageNodes[0], {
-            top: 0,
-            left: 0.52 * modalWidth,
-            opacity: 0.4,
-            zIndex: 4,
-            scale: 0.75,
-            border: `1px solid black`,
-        });
+            this.setImageStyles(this.explosionNextShowingImageNodes[1], {
+                top: 0.12 * modalHeight,
+                left: 0.72 * modalWidth,
+                opacity: 0.3,
+                zIndex: 3,
+                scale: 0.6,
+                border: `1px solid black`,
+            });
 
-        this.setImageStyles(this.explosionNextShowingImageNodes[1], {
-            top: 0.12 * modalHeight,
-            left: 0.72 * modalWidth,
-            opacity: 0.3,
-            zIndex: 3,
-            scale: 0.6,
-            border: `1px solid black`,
-        });
+            this.setImageStyles(this.explosionNextShowingImageNodes[2], {
+                top: 0.47 * modalHeight,
+                left: 0.67 * modalWidth,
+                opacity: 0.2,
+                zIndex: 2,
+                scale: 0.5,
+            });
 
-        this.setImageStyles(this.explosionNextShowingImageNodes[2], {
-            top: 0.47 * modalHeight,
-            left: 0.67 * modalWidth,
-            opacity: 0.2,
-            zIndex: 2,
-            scale: 0.5,
-        });
-
-        this.setImageStyles(this.explosionNextShowingImageNodes[3], {
-            top: 0.67 * modalHeight,
-            left: 0.53 * modalWidth,
-            opacity: 0.1,
-            zIndex: 1,
-            scale: 0.4,
-        });
-
-        this.explosionNextHiddenImageNodes.forEach((node) => {
-            this.setImageStyles(node, {
-                top: modalHeight,
+            this.setImageStyles(this.explosionNextShowingImageNodes[3], {
+                top: 0.67 * modalHeight,
                 left: 0.53 * modalWidth,
                 opacity: 0.1,
                 zIndex: 1,
                 scale: 0.4,
             });
-        });
 
-        this.setControlStyles(this.explosionControlsNode, {
-            marginTop: (modalHeight - imageHeight * 1.2) / 2,
-            height: imageHeight * 1.2,
-        });
+            this.explosionNextHiddenImageNodes.forEach((node) => {
+                this.setImageStyles(node, {
+                    top: modalHeight,
+                    left: 0.53 * modalWidth,
+                    opacity: 0.1,
+                    zIndex: 1,
+                    scale: 0.4,
+                });
+            });
 
-        this.explosionSummaryNode.style.width = "50%";
+            this.setControlStyles(this.explosionControlsNode, {
+                marginTop: (modalHeight - imageHeight * 1.2) / 2,
+                height: imageHeight * 1.2,
+            });
+
+            this.explosionSummaryNode.style.width = "30%";
+            this.explosionTitleNode.style.width = "30%";
+            this.explosionTitleNode.style.textAlign = "left";
+            this.explosionDescriptionNode.style.width = "53%";
+            this.explosionDescriptionNode.style.bottom = "0px";
+        }
+        if (screenWidth < 800) {
+            this.explosionPrevHiddenImageNodes.forEach((node) => {
+                this.setImageStyles(node, {
+                    top: (modalHeight - imageHeight) / 2,
+                    left: (modalWidth - imageWidth) / 2,
+                    opacity: 0,
+                    zIndex: 1,
+                    scale: 1,
+                    border: `none`,
+                });
+            });
+
+            this.explosionPrevShowingImageNodes.forEach((node) => {
+                this.setImageStyles(node, {
+                    top: (modalHeight - imageHeight) / 2,
+                    left: (modalWidth - imageWidth) / 2,
+                    opacity: 0,
+                    zIndex: 1,
+                    scale: 1,
+                    border: `none`,
+                });
+            });
+
+            this.explosionNextShowingImageNodes.forEach((node) => {
+                this.setImageStyles(node, {
+                    top: (modalHeight - imageHeight) / 2,
+                    left: (modalWidth - imageWidth) / 2,
+                    opacity: 0,
+                    zIndex: 1,
+                    scale: 1,
+                    border: `none`,
+                });
+            });
+
+            this.explosionActiveImageNodes.forEach((node) => {
+                this.setImageStyles(node, {
+                    top: (modalHeight - imageHeight) / 2,
+                    left: (modalWidth - imageWidth) / 2,
+                    opacity: 1,
+                    zIndex: 5,
+                    scale: 1.2,
+                    border: `1px solid black`,
+                });
+            });
+
+            this.explosionNextHiddenImageNodes.forEach((node) => {
+                this.setImageStyles(node, {
+                    top: (modalHeight - imageHeight) / 2,
+                    left: (modalWidth - imageWidth) / 2,
+                    opacity: 0,
+                    zIndex: 1,
+                    scale: 1,
+                    border: `none`,
+                });
+            });
+
+            this.setControlStyles(this.explosionControlsNode, {
+                marginTop: (modalHeight - imageHeight * 1.2) / 2,
+                height: imageHeight * 1.2,
+            });
+
+            this.explosionSummaryNode.style.width = "100%";
+            this.explosionTitleNode.style.width = "100%";
+            this.explosionTitleNode.style.textAlign = "center";
+            this.explosionDescriptionNode.style.width = "100%";
+            this.explosionDescriptionNode.style.bottom = "80px";
+        }
     }
 
     setImageStyles(element, { top, left, opacity, zIndex, scale, border }) {
