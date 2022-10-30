@@ -23,6 +23,24 @@
             transition: none;
         }
     }
+
+    &Button {
+        height: 48px;
+        padding: 5px 20px;
+        border: 0px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19px;
+        text-align: center;
+        white-space: nowrap;
+        position: relative;
+        background-color: var(--yellow);
+
+        @media screen and (max-width: 619px) {
+            width: 100%;
+        }
+    }
     &Image {
         position: absolute;
         width: 500px;
@@ -49,6 +67,35 @@
         margin-top: 3000px;
         height: 400px;
         transition: margin 0.7s;
+    }
+
+    &Summary {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 3;
+        background-color: #2d5051;
+        transition: width 0.7s;
+        color: var(--white);
+        width: 0%;
+        overflow: hidden;
+
+        &Content {
+            padding: 0.5rem 2rem;
+            opacity: 1;
+            white-space: nowrap;
+            transition: opacity 0.3s;
+        }
+    }
+
+    &Title {
+        font-size: 2em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    &Description {
+        color: #daa35b;
     }
 
     &Close {
@@ -115,4 +162,9 @@
         font-size: 1.2rem;
         padding: 1rem 0;
     }
+}
+
+.explosionButton.disabled {
+    opacity: 0.5;
+    pointer-events: none;
 }

@@ -235,6 +235,9 @@ class ExplositionGallery {
         this.explosionButtonSiteNode = this.modalContainerNode.querySelector(
             `.${explosionButtonSiteClassName}`
         );
+        this.explosionSummaryNode = this.modalContainerNode.querySelector(
+            `.${explosionSummaryClassName}`
+        );
     }
 
     events() {
@@ -287,11 +290,6 @@ class ExplositionGallery {
     }
 
     switchChanges() {
-        // установить фото на нужные места
-        // установить состояния кнопок
-        // изменить счетчик
-        // установить/изменить описание
-
         this.setCurrentState();
         this.switchDisabledNav();
         this.changeCounter();
@@ -457,6 +455,8 @@ class ExplositionGallery {
             marginTop: (modalHeight - imageHeight * 1.2) / 2,
             height: imageHeight * 1.2,
         });
+
+        this.explosionSummaryNode.style.width = "50%";
     }
 
     setImageStyles(element, { top, left, opacity, zIndex, scale }) {

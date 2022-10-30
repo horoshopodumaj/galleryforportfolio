@@ -400,6 +400,12 @@ h6 {
   }
 }
 
+.project__buttons {
+  display: flex;
+  padding: 1rem 1rem 1rem 0;
+  gap: 1.2rem;
+}
+
 .galleryItem {
   display: inline-block;
   width: 32.3333%;
@@ -698,6 +704,24 @@ h6 {
 .explosion_Opening .explosionImage {
   transition: none;
 }
+.explosionButton {
+  height: 48px;
+  padding: 5px 20px;
+  border: 0px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  text-align: center;
+  white-space: nowrap;
+  position: relative;
+  background-color: var(--yellow);
+}
+@media screen and (max-width: 619px) {
+  .explosionButton {
+    width: 100%;
+  }
+}
 .explosionImage {
   position: absolute;
   width: 500px;
@@ -722,6 +746,31 @@ h6 {
   margin-top: 3000px;
   height: 400px;
   transition: margin 0.7s;
+}
+.explosionSummary {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  background-color: #2d5051;
+  transition: width 0.7s;
+  color: var(--white);
+  width: 0%;
+  overflow: hidden;
+}
+.explosionSummaryContent {
+  padding: 0.5rem 2rem;
+  opacity: 1;
+  white-space: nowrap;
+  transition: opacity 0.3s;
+}
+.explosionTitle {
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.explosionDescription {
+  color: #daa35b;
 }
 .explosionClose {
   position: absolute;
@@ -778,6 +827,11 @@ h6 {
   font-weight: bold;
   font-size: 1.2rem;
   padding: 1rem 0;
+}
+
+.explosionButton.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=index.css.map */
