@@ -245,12 +245,30 @@ class ExplositionGallery {
         this.explosionSummaryContentNode = this.modalContainerNode.querySelector(
             `.${explosionSummaryContentClassName}`
         );
+
+        this.explosionCloseNode = this.modalContainerNode.querySelector(
+            `.${explosionCloseClassName}`
+        );
     }
 
     events() {
         this.containerNode.addEventListener("click", this.activateGallery);
         this.explosionNavsNode.addEventListener("click", this.switchImage);
+        this.explosionCloseNode.addEventListener("click", this.closeGallery);
     }
+
+    closeGallery = () => {
+        this.setInitPositionsToImages();
+        this.explosionImageNodes.forEach((imageNode) => {
+            imageNode.style.opacity = 1;
+        });
+        this.explosionSummaryNode.style.width = "0";
+        this.explosionControlsNode.style.marginTop = "3000px";
+
+        fadeOut(this.modalContainerNode, () => {
+            this.modalContainerNode.classList.remove(explosionOpenedClassName);
+        });
+    };
 
     switchImage = (event) => {
         event.preventDefault();
@@ -328,14 +346,16 @@ class ExplositionGallery {
         const content = this.data[this.currentIndex];
 
         if (hasSummaryAnimation) {
-            this.explosionSummaryContentNode.stule.opacity = 0;
+            this.explosionSummaryContentNode.style.opacity = 0;
             setTimeout(() => {
                 this.explosionTitleNode.innerText = content.title;
                 this.explosionDescriptionNode.innerText = content.description;
                 this.explosionGitNode.setAttribute("action", `${content.git}`);
-                this.explosionSiteNode.setAttribute("action", `${content.site}`);
+
                 {
-                    content.site === "#" && this.explosionButtonSiteNode.classList.add("disabled");
+                    content.site === "#"
+                        ? this.explosionButtonSiteNode.classList.add("disabled")
+                        : this.explosionSiteNode.setAttribute("action", `${content.site}`);
                 }
 
                 this.explosionSummaryContentNode.style.opacity = 1;
@@ -408,6 +428,7 @@ class ExplositionGallery {
                 opacity: 0.1,
                 zIndex: 1,
                 scale: 0.4,
+                border: `1px solid black`,
             });
         });
 
@@ -417,6 +438,7 @@ class ExplositionGallery {
             opacity: 0.4,
             zIndex: 4,
             scale: 0.75,
+            border: `1px solid black`,
         });
 
         this.setImageStyles(this.explosionPrevShowingImageNodes[1], {
@@ -425,6 +447,7 @@ class ExplositionGallery {
             opacity: 0.3,
             zIndex: 3,
             scale: 0.6,
+            border: `1px solid black`,
         });
 
         this.setImageStyles(this.explosionPrevShowingImageNodes[2], {
@@ -433,6 +456,7 @@ class ExplositionGallery {
             opacity: 0.2,
             zIndex: 2,
             scale: 0.5,
+            border: `1px solid black`,
         });
 
         this.setImageStyles(this.explosionPrevShowingImageNodes[3], {
@@ -441,6 +465,7 @@ class ExplositionGallery {
             opacity: 0.1,
             zIndex: 1,
             scale: 0.4,
+            border: `1px solid black`,
         });
 
         this.explosionActiveImageNodes.forEach((node) => {
@@ -450,6 +475,7 @@ class ExplositionGallery {
                 opacity: 1,
                 zIndex: 5,
                 scale: 1.2,
+                border: `1px solid black`,
             });
         });
 
@@ -459,6 +485,7 @@ class ExplositionGallery {
             opacity: 0.4,
             zIndex: 4,
             scale: 0.75,
+            border: `1px solid black`,
         });
 
         this.setImageStyles(this.explosionNextShowingImageNodes[1], {
@@ -467,6 +494,7 @@ class ExplositionGallery {
             opacity: 0.3,
             zIndex: 3,
             scale: 0.6,
+            border: `1px solid black`,
         });
 
         this.setImageStyles(this.explosionNextShowingImageNodes[2], {
@@ -503,7 +531,7 @@ class ExplositionGallery {
         this.explosionSummaryNode.style.width = "50%";
     }
 
-    setImageStyles(element, { top, left, opacity, zIndex, scale }) {
+    setImageStyles(element, { top, left, opacity, zIndex, scale, border }) {
         if (!element) {
             return;
         }
@@ -513,6 +541,7 @@ class ExplositionGallery {
             1
         )}px, 0) scale(${scale})`;
         element.style.zIndex = zIndex;
+        element.style.border = border;
     }
 
     setControlStyles(element, { marginTop, height }) {
