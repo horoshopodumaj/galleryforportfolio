@@ -238,11 +238,39 @@ class ExplositionGallery {
         this.explosionSummaryNode = this.modalContainerNode.querySelector(
             `.${explosionSummaryClassName}`
         );
+        this.explosionNavsNode = this.modalContainerNode.querySelector(
+            `.${explosionNavsClassName}`
+        );
+
+        this.explosionSummaryContentNode = this.modalContainerNode.querySelector(
+            `.${explosionSummaryContentClassName}`
+        );
     }
 
     events() {
         this.containerNode.addEventListener("click", this.activateGallery);
+        this.explosionNavsNode.addEventListener("click", this.switchImage);
     }
+
+    switchImage = (event) => {
+        event.preventDefault();
+        const buttonNode = event.target.closest("button");
+        if (!buttonNode) {
+            return;
+        }
+
+        if (buttonNode.classList.contains(explosionNavPrevClassName) && this.currentIndex > 0) {
+            this.currentIndex -= 1;
+        }
+        if (
+            buttonNode.classList.contains(explosionNavNextClassName) &&
+            this.currentIndex < this.size - 1
+        ) {
+            this.currentIndex += 1;
+        }
+
+        this.switchChanges(true);
+    };
 
     activateGallery = (event) => {
         event.preventDefault();
@@ -289,21 +317,37 @@ class ExplositionGallery {
         element.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0)`;
     }
 
-    switchChanges() {
+    switchChanges(hasSummaryAnimation) {
         this.setCurrentState();
         this.switchDisabledNav();
         this.changeCounter();
-        this.changeSummary();
+        this.changeSummary(hasSummaryAnimation);
     }
 
-    changeSummary() {
+    changeSummary(hasSummaryAnimation) {
         const content = this.data[this.currentIndex];
-        this.explosionTitleNode.innerText = content.title;
-        this.explosionDescriptionNode.innerText = content.description;
-        this.explosionGitNode.setAttribute("action", `${content.git}`);
-        this.explosionSiteNode.setAttribute("action", `${content.site}`);
-        {
-            content.site === "#" && this.explosionButtonSiteNode.classList.add("disabled");
+
+        if (hasSummaryAnimation) {
+            this.explosionSummaryContentNode.stule.opacity = 0;
+            setTimeout(() => {
+                this.explosionTitleNode.innerText = content.title;
+                this.explosionDescriptionNode.innerText = content.description;
+                this.explosionGitNode.setAttribute("action", `${content.git}`);
+                this.explosionSiteNode.setAttribute("action", `${content.site}`);
+                {
+                    content.site === "#" && this.explosionButtonSiteNode.classList.add("disabled");
+                }
+
+                this.explosionSummaryContentNode.style.opacity = 1;
+            }, 300);
+        } else {
+            this.explosionTitleNode.innerText = content.title;
+            this.explosionDescriptionNode.innerText = content.description;
+            this.explosionGitNode.setAttribute("action", `${content.git}`);
+            this.explosionSiteNode.setAttribute("action", `${content.site}`);
+            {
+                content.site === "#" && this.explosionButtonSiteNode.classList.add("disabled");
+            }
         }
     }
 
