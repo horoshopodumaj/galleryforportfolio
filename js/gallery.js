@@ -216,14 +216,14 @@ class ExplositionGallery {
         this.explosionNavsNode.addEventListener("click", this.switchImage);
         this.explosionCloseNode.addEventListener("click", this.closeGallery);
         window.addEventListener("keyup", this.keyDown);
-        window.addEventListener("scroll", this.scrollWindowOpenedModal);
+        //window.addEventListener("scroll", this.scrollWindowOpenedModal);
     }
 
-    scrollWindowOpenedModal = () => {
-        if (this.modalContainerNode.classList.contains(explosionOpenedClassName)) {
-            document.body.style.overflow = "hidden";
-        }
-    };
+    // scrollWindowOpenedModal = () => {
+    //     if (this.modalContainerNode.classList.contains(explosionOpenedClassName)) {
+    //         document.body.style.overflow = "hidden";
+    //     }
+    // };
 
     keyDown = (event) => {
         if (this.modalContainerNode.classList.contains(explosionOpenedClassName)) {
@@ -265,7 +265,7 @@ class ExplositionGallery {
             this.modalContainerNode.classList.remove(explosionOpenedClassName);
         });
 
-        document.body.style.overflow = "";
+        document.body.classList.toggle("_lock");
     };
 
     switchImage = (event) => {
@@ -291,6 +291,8 @@ class ExplositionGallery {
     activateGallery = (event) => {
         event.preventDefault();
         const linkNode = event.target.closest("a");
+
+        document.body.classList.add("_lock");
 
         if (
             !linkNode ||
