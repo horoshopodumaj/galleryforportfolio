@@ -433,7 +433,6 @@ h6 {
   z-index: 1;
   transform: scale(1);
   transition: transform 3s;
-  padding: 40px;
 }
 .cardContent, .cardHover, .cardImage {
   position: absolute;

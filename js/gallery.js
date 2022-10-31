@@ -612,7 +612,7 @@ class ExplositionGallery {
                 });
             });
 
-            this.setControlStyles800(this.explosionControlsNode, {
+            this.setControlStyles(this.explosionControlsNode, {
                 marginTop: (modalHeight - imageHeight * 1.2) / 4,
                 height: imageHeight * 1.2,
             });
@@ -687,7 +687,7 @@ class ExplositionGallery {
                 });
             });
 
-            this.setControlStyles800(this.explosionControlsNode, {
+            this.setControlStyles(this.explosionControlsNode, {
                 marginTop: imageHeight + 275,
                 height: imageHeight / 3 + 100,
             });
