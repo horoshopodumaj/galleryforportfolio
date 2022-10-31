@@ -556,7 +556,82 @@ class ExplositionGallery {
             this.explosionControlsNode.style.right = "22%";
             this.explosionCloseNode.style.right = "2%";
         }
-        if (screenWidth < 800) {
+        if (screenWidth < 800 && screenWidth >= 500) {
+            this.explosionPrevHiddenImageNodes.forEach((node) => {
+                this.setImageStyles(node, {
+                    top: (modalHeight - imageHeight) / 2,
+                    left: (modalWidth - imageWidth) / 2,
+                    opacity: 0,
+                    zIndex: 1,
+                    scale: 1,
+                    border: `none`,
+                });
+            });
+
+            this.explosionPrevShowingImageNodes.forEach((node) => {
+                this.setImageStyles(node, {
+                    top: (modalHeight - imageHeight) / 2,
+                    left: (modalWidth - imageWidth) / 2,
+                    opacity: 0,
+                    zIndex: 1,
+                    scale: 1,
+                    border: `none`,
+                });
+            });
+
+            this.explosionNextShowingImageNodes.forEach((node) => {
+                this.setImageStyles(node, {
+                    top: (modalHeight - imageHeight) / 2,
+                    left: (modalWidth - imageWidth) / 2,
+                    opacity: 0,
+                    zIndex: 1,
+                    scale: 1,
+                    border: `none`,
+                });
+            });
+
+            this.explosionActiveImageNodes.forEach((node) => {
+                this.setImageStyles(node, {
+                    top: (modalHeight - imageHeight - 400) / 1.7,
+                    left: (modalWidth - imageWidth - 100) / 2,
+                    opacity: 1,
+                    zIndex: 5,
+                    scale: 1.2,
+                    border: `1px solid black`,
+                });
+            });
+
+            this.explosionNextHiddenImageNodes.forEach((node) => {
+                this.setImageStyles(node, {
+                    top: (modalHeight - imageHeight) / 2,
+                    left: (modalWidth - imageWidth) / 2,
+                    opacity: 0,
+                    zIndex: 1,
+                    scale: 1,
+                    border: `none`,
+                });
+            });
+
+            this.setControlStyles800(this.explosionControlsNode, {
+                marginTop: (modalHeight - imageHeight * 1.2) / 4,
+                height: imageHeight * 1.2,
+            });
+
+            this.setControlStyles(this.explosionCloseNode, {
+                marginTop: 0,
+                height: 48,
+            });
+
+            this.explosionSummaryNode.style.width = "100%";
+            this.explosionTitleNode.style.width = "100%";
+            this.explosionTitleNode.style.textAlign = "center";
+            this.explosionDescriptionNode.style.width = "100%";
+            this.explosionDescriptionNode.style.bottom = "80px";
+            this.explosionControlsNode.style.right = "10%";
+            this.explosionCloseNode.style.right = "0%";
+            this.explosionCloseNode.style.zIndex = "10";
+        }
+        if (screenWidth < 500) {
             this.explosionPrevHiddenImageNodes.forEach((node) => {
                 this.setImageStyles(node, {
                     top: (modalHeight - imageHeight) / 2,
@@ -613,7 +688,7 @@ class ExplositionGallery {
             });
 
             this.setControlStyles800(this.explosionControlsNode, {
-                marginTop: imageHeight + 250,
+                marginTop: imageHeight + 275,
                 height: imageHeight / 3 + 100,
             });
 
