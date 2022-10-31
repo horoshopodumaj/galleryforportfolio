@@ -12,11 +12,9 @@
     z-index: 999;
     color: var(--black);
     opacity: 0;
-    overflow-y: auto;
 
     &_Opened {
         display: block;
-        overflow: auto;
     }
     &_Opening {
         display: block;
@@ -119,6 +117,7 @@
         opacity: 1;
         width: 0%;
         letter-spacing: 0.1em;
+        text-align: justify;
         @media screen and (max-width: 599px) {
             font-size: 0.9rem;
         }

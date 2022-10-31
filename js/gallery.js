@@ -725,10 +725,6 @@ class ExplositionGallery {
         element.style.marginTop = marginTop + "px";
         element.style.height = height + "px";
     }
-    setControlStyles800(element, { marginTop, height }) {
-        element.style.marginTop = marginTop + "px";
-        element.style.height = height + "px";
-    }
 }
 
 /**
