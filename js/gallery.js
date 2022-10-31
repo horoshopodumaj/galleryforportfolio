@@ -143,8 +143,9 @@ class ExplositionGallery {
 
             </div>
         </div>
+        <button class="${explosionCloseClassName}"></button>
         <div class="${explosionControlsClassName}">
-            <button class="${explosionCloseClassName}"></button>
+            
             <div class="${explosionNavsClassName}">
                 <button class="${explosionNavClassName} ${explosionNavPrevClassName}"></button>
                 <div class="${explosionCouterClassName}">1/${this.size}</div>
@@ -313,12 +314,20 @@ class ExplositionGallery {
     };
 
     setInitSizesToImages() {
-        this.linkNodes.forEach((linkNode, index) => {
-            const data = linkNode.getBoundingClientRect();
-            this.explosionImageNodes[index].style.width = data.width + "px";
-            this.explosionImageNodes[index].style.height = data.height + "px";
-            //this.explosionImageNodes[index].style.padding = "40px";
-        });
+        const screenWidth = window.screen.width;
+        if (screenWidth >= 800) {
+            this.linkNodes.forEach((linkNode, index) => {
+                const data = linkNode.getBoundingClientRect();
+                this.explosionImageNodes[index].style.width = data.width + "px";
+                this.explosionImageNodes[index].style.height = data.height + "px";
+            });
+        } else {
+            this.linkNodes.forEach((linkNode, index) => {
+                const data = linkNode.getBoundingClientRect();
+                this.explosionImageNodes[index].style.width = data.width + 100 + "px";
+                this.explosionImageNodes[index].style.height = data.height + 100 + "px";
+            });
+        }
     }
 
     setInitPositionsToImages() {
@@ -532,12 +541,18 @@ class ExplositionGallery {
                 marginTop: (modalHeight - imageHeight * 1.2) / 2,
                 height: imageHeight * 1.2,
             });
+            this.setControlStyles(this.explosionCloseNode, {
+                marginTop: 0,
+                height: 48,
+            });
 
             this.explosionSummaryNode.style.width = "30%";
-            this.explosionTitleNode.style.width = "30%";
+            this.explosionTitleNode.style.width = "60%";
             this.explosionTitleNode.style.textAlign = "left";
             this.explosionDescriptionNode.style.width = "53%";
             this.explosionDescriptionNode.style.bottom = "0px";
+            this.explosionControlsNode.style.right = "22%";
+            this.explosionCloseNode.style.right = "2%";
         }
         if (screenWidth < 800) {
             this.explosionPrevHiddenImageNodes.forEach((node) => {
@@ -575,8 +590,8 @@ class ExplositionGallery {
 
             this.explosionActiveImageNodes.forEach((node) => {
                 this.setImageStyles(node, {
-                    top: (modalHeight - imageHeight) / 2,
-                    left: (modalWidth - imageWidth) / 2,
+                    top: (modalHeight - imageHeight - 400) / 2,
+                    left: (modalWidth - imageWidth - 100) / 2,
                     opacity: 1,
                     zIndex: 5,
                     scale: 1.2,
@@ -595,9 +610,14 @@ class ExplositionGallery {
                 });
             });
 
-            this.setControlStyles(this.explosionControlsNode, {
-                marginTop: (modalHeight - imageHeight * 1.2) / 2,
-                height: imageHeight * 1.2,
+            this.setControlStyles800(this.explosionControlsNode, {
+                marginTop: imageHeight + 250,
+                height: imageHeight / 3 + 100,
+            });
+
+            this.setControlStyles(this.explosionCloseNode, {
+                marginTop: 0,
+                height: 48,
             });
 
             this.explosionSummaryNode.style.width = "100%";
@@ -605,6 +625,9 @@ class ExplositionGallery {
             this.explosionTitleNode.style.textAlign = "center";
             this.explosionDescriptionNode.style.width = "100%";
             this.explosionDescriptionNode.style.bottom = "80px";
+            this.explosionControlsNode.style.right = "44%";
+            this.explosionCloseNode.style.right = "0%";
+            this.explosionCloseNode.style.zIndex = "10";
         }
     }
 
@@ -622,6 +645,10 @@ class ExplositionGallery {
     }
 
     setControlStyles(element, { marginTop, height }) {
+        element.style.marginTop = marginTop + "px";
+        element.style.height = height + "px";
+    }
+    setControlStyles800(element, { marginTop, height }) {
         element.style.marginTop = marginTop + "px";
         element.style.height = height + "px";
     }
