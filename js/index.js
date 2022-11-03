@@ -216,14 +216,7 @@ class ExplositionGallery {
         this.explosionNavsNode.addEventListener("click", this.switchImage);
         this.explosionCloseNode.addEventListener("click", this.closeGallery);
         window.addEventListener("keyup", this.keyDown);
-        //window.addEventListener("scroll", this.scrollWindowOpenedModal);
     }
-
-    // scrollWindowOpenedModal = () => {
-    //     if (this.modalContainerNode.classList.contains(explosionOpenedClassName)) {
-    //         document.body.style.overflow = "hidden";
-    //     }
-    // };
 
     keyDown = (event) => {
         if (this.modalContainerNode.classList.contains(explosionOpenedClassName)) {
@@ -452,7 +445,6 @@ class ExplositionGallery {
                     opacity: 0.1,
                     zIndex: 1,
                     scale: 0.4,
-                    border: `1px solid black`,
                 });
             });
 
@@ -462,7 +454,6 @@ class ExplositionGallery {
                 opacity: 0.4,
                 zIndex: 4,
                 scale: 0.75,
-                border: `1px solid black`,
             });
 
             this.setImageStyles(this.explosionPrevShowingImageNodes[1], {
@@ -471,7 +462,6 @@ class ExplositionGallery {
                 opacity: 0.3,
                 zIndex: 3,
                 scale: 0.6,
-                border: `1px solid black`,
             });
 
             this.setImageStyles(this.explosionPrevShowingImageNodes[2], {
@@ -480,7 +470,6 @@ class ExplositionGallery {
                 opacity: 0.2,
                 zIndex: 2,
                 scale: 0.5,
-                border: `1px solid black`,
             });
 
             this.setImageStyles(this.explosionPrevShowingImageNodes[3], {
@@ -489,7 +478,6 @@ class ExplositionGallery {
                 opacity: 0.1,
                 zIndex: 1,
                 scale: 0.4,
-                border: `1px solid black`,
             });
 
             this.explosionActiveImageNodes.forEach((node) => {
@@ -499,7 +487,6 @@ class ExplositionGallery {
                     opacity: 1,
                     zIndex: 5,
                     scale: 1.2,
-                    border: `1px solid black`,
                 });
             });
 
@@ -509,7 +496,6 @@ class ExplositionGallery {
                 opacity: 0.4,
                 zIndex: 4,
                 scale: 0.75,
-                border: `1px solid black`,
             });
 
             this.setImageStyles(this.explosionNextShowingImageNodes[1], {
@@ -518,7 +504,6 @@ class ExplositionGallery {
                 opacity: 0.3,
                 zIndex: 3,
                 scale: 0.6,
-                border: `1px solid black`,
             });
 
             this.setImageStyles(this.explosionNextShowingImageNodes[2], {
@@ -572,7 +557,6 @@ class ExplositionGallery {
                     opacity: 0,
                     zIndex: 1,
                     scale: 1,
-                    border: `none`,
                 });
             });
 
@@ -583,7 +567,6 @@ class ExplositionGallery {
                     opacity: 0,
                     zIndex: 1,
                     scale: 1,
-                    border: `none`,
                 });
             });
 
@@ -594,7 +577,6 @@ class ExplositionGallery {
                     opacity: 0,
                     zIndex: 1,
                     scale: 1,
-                    border: `none`,
                 });
             });
 
@@ -605,7 +587,6 @@ class ExplositionGallery {
                     opacity: 1,
                     zIndex: 5,
                     scale: 1.2,
-                    border: `1px solid black`,
                 });
             });
 
@@ -616,7 +597,6 @@ class ExplositionGallery {
                     opacity: 0,
                     zIndex: 1,
                     scale: 1,
-                    border: `none`,
                 });
             });
 
@@ -647,7 +627,6 @@ class ExplositionGallery {
                     opacity: 0,
                     zIndex: 1,
                     scale: 1,
-                    border: `none`,
                 });
             });
 
@@ -658,7 +637,6 @@ class ExplositionGallery {
                     opacity: 0,
                     zIndex: 1,
                     scale: 1,
-                    border: `none`,
                 });
             });
 
@@ -669,10 +647,8 @@ class ExplositionGallery {
                     opacity: 0,
                     zIndex: 1,
                     scale: 1,
-                    border: `none`,
                 });
             });
-            console.log(modalHeight);
             this.explosionActiveImageNodes.forEach((node) => {
                 this.setImageStyles(node, {
                     top: (modalHeight - imageHeight - modalHeight / 3) / 2,
@@ -680,7 +656,6 @@ class ExplositionGallery {
                     opacity: 1,
                     zIndex: 5,
                     scale: 1.2,
-                    border: `1px solid black`,
                 });
             });
 
@@ -691,7 +666,6 @@ class ExplositionGallery {
                     opacity: 0,
                     zIndex: 1,
                     scale: 1,
-                    border: `none`,
                 });
             });
 
@@ -716,7 +690,7 @@ class ExplositionGallery {
         }
     }
 
-    setImageStyles(element, { top, left, opacity, zIndex, scale, border }) {
+    setImageStyles(element, { top, left, opacity, zIndex, scale }) {
         if (!element) {
             return;
         }
@@ -726,7 +700,6 @@ class ExplositionGallery {
             1
         )}px, 0) scale(${scale})`;
         element.style.zIndex = zIndex;
-        element.style.border = border;
     }
 
     setControlStyles(element, { marginTop, height }) {
