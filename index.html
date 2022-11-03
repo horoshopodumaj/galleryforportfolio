@@ -5,330 +5,160 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-
         <link rel="stylesheet" href="./css/index.css" />
-        <link rel="stylesheet" href="./css/all.css" />
-        <title>Murtazina Diana | Frontend Developer</title>
-        <script defer src="./js/burger-menu.js"></script>
-        <script src="libs/gsap/gsap.min.js" defer></script>
+        <title>Gallery</title>
     </head>
     <body>
-        <!-- <div id="cursor"></div>
-        <div id="aura"></div> -->
-        <div class="page">
-            <header class="header" id="home">
-                <div class="page__box">
-                    <button class="burger-menu__open-btn" id="burger-menu-open">
-                        <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M3 12H21"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                            <path
-                                d="M3 6H21"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                            <path
-                                d="M3 18H21"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                        </svg>
-                    </button>
-                    <div class="burger-menu" id="burger-menu">
-                        <div class="burger-menu__header">
-                            <div class="burger-menu__container">
-                                <select
-                                    name="#"
-                                    id="select_burger"
-                                    class="navbar__lang burger-menu__lang"
-                                >
-                                    <option value="ru">RU</option>
-                                    <option value="en" selected>EN</option>
-                                </select>
-                                <button class="burger-menu__close-btn" id="burger-menu-close">
-                                    <svg
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M18 6L6 18"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                        <path
-                                            d="M6 6L18 18"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                </button>
-                            </div>
+        <section id="project" class="projects main__projects">
+            <h2 class="projects__title lng-myprojects">Gallery</h2>
+            <div class="gallery">
+                <div class="galleryItem">
+                    <a href="/img/1.jpg" target="_blank" class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">Landing Page Layout</h3>
+                            <p class="cardDescription">
+                                Layout of the landing site according to the layout for a language
+                                school. The project uses BEM, scss, postcss. Images in the project
+                                are inserted from svg-sprite.
+                            </p>
                         </div>
-                        <div class="burger-menu__body">
-                            <div class="burger-menu__container">
-                                <div class="burger-menu__menu">
-                                    <nav class="burger-menu__main">
-                                        <a href="#home">Home</a>
-                                        <a href="#aboutme">About me</a>
-                                        <a href="#project">My projects</a>
-                                        <a href="#contactme">Contact Me</a>
-                                        <!-- <a href="#">Resume</a> -->
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <nav>
-                        <ul class="navbar header__nav">
-                            <a href="#home">
-                                <li class="navbar__item lng-home">Home</li>
-                            </a>
-                            <a href="#aboutme">
-                                <li class="navbar__item lng-about">About me</li>
-                            </a>
-                            <a href="#project">
-                                <li class="navbar__item lng-projects">My projects</li>
-                            </a>
-                            <a href="#contactme">
-                                <li class="navbar__item lng-contact">Contact Me</li>
-                            </a>
-                            <select name="#" id="select" class="navbar__lang">
-                                <option value="ru">RU</option>
-                                <option value="en" selected>EN</option>
-                            </select>
-                        </ul>
-                    </nav>
-                    <div class="hi header__hi">
-                        <p class="lng-hi">Hi, my name is</p>
-                        <h1 class="lng-name">Diana Murtazina</h1>
-                        <h2>
-                            I am
-                            <span class="element"></span>
-                        </h2>
-                    </div>
+                        <div class="cardHover"></div>
+                        <img src="/img/1.jpg" alt="" class="cardImage" />
+                    </a>
                 </div>
-            </header>
-            <main class="main">
-                <div class="page__box">
-                    <section id="aboutme" class="aboutme main__aboutme">
-                        <img class="aboutme__img" src="./img/my_photo.jpg" alt="" />
-                        <div class="aboutme__content">
-                            <h2 class="aboutme__title lng-aboutme">About me</h2>
-                            <div class="aboutme__text lng-aboutmetext">
-                                Hi, my name is Diana Murtazina and I am a front-end developer.<br />
-                                My skills: <br />- HTML, <br />- CSS (SCSS, BEM, flex, grid),
-                                <br />- JavaScript, <br />- jQuery, <br />- React.
-                            </div>
+                <div class="galleryItem">
+                    <a href="/img/2.jpg" target="_blank" class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">Landing Page Layout</h3>
+                            <p class="cardDescription">
+                                Layout of a landing page for a cosmetics store. The site is checked
+                                using the BEM methodology.
+                            </p>
                         </div>
-                    </section>
-                    <section id="project" class="projects main__projects">
-                        <h2 class="projects__title lng-myprojects">My projects</h2>
-                        <div class="gallery">
-                            <div class="galleryItem">
-                                <a href="/img/1.jpg" target="_blank" class="card">
-                                    <div class="cardContent">
-                                        <h3 class="cardTitle">Landing Page Layout</h3>
-                                        <p class="cardDescription">
-                                            Layout of the landing site according to the layout for a
-                                            language school. The project uses BEM, scss, postcss.
-                                            Images in the project are inserted from svg-sprite.
-                                        </p>
-                                    </div>
-                                    <div class="cardHover"></div>
-                                    <img src="/img/1.jpg" alt="" class="cardImage" />
-                                </a>
-                            </div>
-                            <div class="galleryItem">
-                                <a href="/img/2.jpg" target="_blank" class="card">
-                                    <div class="cardContent">
-                                        <h3 class="cardTitle">Landing Page Layout</h3>
-                                        <p class="cardDescription">
-                                            Layout of a landing page for a cosmetics store. The site
-                                            is checked using the BEM methodology.
-                                        </p>
-                                    </div>
-                                    <div class="cardHover"></div>
-                                    <img src="/img/2.jpg" alt="" class="cardImage" />
-                                </a>
-                            </div>
-                            <div class="galleryItem">
-                                <a href="/img/3.jpg" target="_blank" class="card">
-                                    <div class="cardContent">
-                                        <h3 class="cardTitle">Reusable Component Library</h3>
-                                        <p class="cardDescription">
-                                            Layout of a landing page for a cosmetics store. The site
-                                            is checked using the BEM methodology.
-                                        </p>
-                                    </div>
-                                    <div class="cardHover"></div>
-                                    <img src="/img/3.jpg" alt="" class="cardImage" />
-                                </a>
-                            </div>
-                            <div class="galleryItem">
-                                <a href="/img/4.jpg" target="_blank" class="card">
-                                    <div class="cardContent">
-                                        <h3 class="cardTitle">Restaurant Website</h3>
-                                        <p class="cardDescription">
-                                            Layout of a landing page for a cosmetics store. The site
-                                            is checked using the BEM methodology.
-                                        </p>
-                                    </div>
-                                    <div class="cardHover"></div>
-                                    <img src="/img/4.jpg" alt="" class="cardImage" />
-                                </a>
-                            </div>
-                            <div class="galleryItem">
-                                <a href="/img/5.jpg" target="_blank" class="card">
-                                    <div class="cardContent">
-                                        <h3 class="cardTitle">Furniture Store</h3>
-                                        <p class="cardDescription">
-                                            Layout of a landing page for a cosmetics store. The site
-                                            is checked using the BEM methodology.
-                                        </p>
-                                    </div>
-                                    <div class="cardHover"></div>
-                                    <img src="/img/5.jpg" alt="" class="cardImage" />
-                                </a>
-                            </div>
-                            <div class="galleryItem">
-                                <a href="/img/6jpg" target="_blank" class="card">
-                                    <div class="cardContent">
-                                        <h3 class="cardTitle">Sneaker Store</h3>
-                                        <p class="cardDescription">
-                                            Layout of a landing page for a cosmetics store. The site
-                                            is checked using the BEM methodology.
-                                        </p>
-                                    </div>
-                                    <div class="cardHover"></div>
-                                    <img src="/img/6.jpg" alt="" class="cardImage" />
-                                </a>
-                            </div>
-                            <div class="galleryItem">
-                                <a href="/img/7jpg" target="_blank" class="card">
-                                    <div class="cardContent">
-                                        <h3 class="cardTitle">Car Leasing Calculator</h3>
-                                        <p class="cardDescription">
-                                            Layout of a landing page for a cosmetics store. The site
-                                            is checked using the BEM methodology.
-                                        </p>
-                                    </div>
-                                    <div class="cardHover"></div>
-                                    <img src="/img/7.jpg" alt="" class="cardImage" />
-                                </a>
-                            </div>
-                            <div class="galleryItem">
-                                <a href="/img/8.jpg" target="_blank" class="card">
-                                    <div class="cardContent">
-                                        <h3 class="cardTitle">Social Network</h3>
-                                        <p class="cardDescription">
-                                            Layout of a landing page for a cosmetics store. The site
-                                            is checked using the BEM methodology.
-                                        </p>
-                                    </div>
-                                    <div class="cardHover"></div>
-                                    <img src="/img/8.jpg" alt="" class="cardImage" />
-                                </a>
-                            </div>
-                            <div class="galleryItem">
-                                <a href="/img/9.jpg" target="_blank" class="card">
-                                    <div class="cardContent">
-                                        <h3 class="cardTitle">Social Network</h3>
-                                        <p class="cardDescription">
-                                            Layout of a landing page for a cosmetics store. The site
-                                            is checked using the BEM methodology.
-                                        </p>
-                                    </div>
-                                    <div class="cardHover"></div>
-                                    <img src="/img/9.jpg" alt="" class="cardImage" />
-                                </a>
-                            </div>
-                            <div class="galleryItem">
-                                <a href="/img/10.jpg" target="_blank" class="card">
-                                    <div class="cardContent">
-                                        <h3 class="cardTitle">Social Network</h3>
-                                        <p class="cardDescription">
-                                            Layout of a landing page for a cosmetics store. The site
-                                            is checked using the BEM methodology.
-                                        </p>
-                                    </div>
-                                    <div class="cardHover"></div>
-                                    <img src="/img/10.jpg" alt="" class="cardImage" />
-                                </a>
-                            </div>
-                            <div class="galleryItem">
-                                <a href="/img/11.jpg" target="_blank" class="card">
-                                    <div class="cardContent">
-                                        <h3 class="cardTitle">Social Network</h3>
-                                        <p class="cardDescription">
-                                            Layout of a landing page for a cosmetics store. The site
-                                            is checked using the BEM methodology.
-                                        </p>
-                                    </div>
-                                    <div class="cardHover"></div>
-                                    <img src="/img/11.jpg" alt="" class="cardImage" />
-                                </a>
-                            </div>
+                        <div class="cardHover"></div>
+                        <img src="/img/2.jpg" alt="" class="cardImage" />
+                    </a>
+                </div>
+                <div class="galleryItem">
+                    <a href="/img/3.jpg" target="_blank" class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">Reusable Component Library</h3>
+                            <p class="cardDescription">
+                                Layout of a landing page for a cosmetics store. The site is checked
+                                using the BEM methodology.
+                            </p>
                         </div>
-                    </section>
+                        <div class="cardHover"></div>
+                        <img src="/img/3.jpg" alt="" class="cardImage" />
+                    </a>
                 </div>
-            </main>
-            <footer class="footer">
-                <div class="page__box">
-                    <section id="contactme" class="footer__contact">
-                        <h2 class="footer__title lng-contactme">Contact me</h2>
-                        <p class="lng-opportunities">
-                            I'm currently looking for opportunities, my inbox is always open whether
-                            for hiring me or just to talk. I'll answer your email!
-                        </p>
-                        <h3 class="footer__email">
-                            <a href="mailto:dianamurtazina.job@gmail.com" class="lng-writeforme">
-                                Let's get in touch</a
-                            >
-                        </h3>
-                    </section>
-                    <section class="footer__links">
-                        <a href="https://github.com/horoshopodumaj" target="_blank">
-                            <i class="fa-brands fa-github" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/diana-murtazina/" target="_blank">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                    </section>
-                    <section class="footer__basement">
-                        <p>Designed &amp; Built by Diana Murtazina ©2022</p>
-                    </section>
-                    <div class="footer__up">
-                        <a href="#home" class="footer__top">
-                            <i class="fa-solid fa-angles-up"></i>
-                        </a>
-                    </div>
+                <div class="galleryItem">
+                    <a href="/img/4.jpg" target="_blank" class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">Restaurant Website</h3>
+                            <p class="cardDescription">
+                                Layout of a landing page for a cosmetics store. The site is checked
+                                using the BEM methodology.
+                            </p>
+                        </div>
+                        <div class="cardHover"></div>
+                        <img src="/img/4.jpg" alt="" class="cardImage" />
+                    </a>
                 </div>
-            </footer>
-        </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <script src="./js/lang.js"></script>
-        <script src="./js/app.js"></script>
-        <script src="./js/typed.min.js"></script>
+                <div class="galleryItem">
+                    <a href="/img/5.jpg" target="_blank" class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">Furniture Store</h3>
+                            <p class="cardDescription">
+                                Layout of a landing page for a cosmetics store. The site is checked
+                                using the BEM methodology.
+                            </p>
+                        </div>
+                        <div class="cardHover"></div>
+                        <img src="/img/5.jpg" alt="" class="cardImage" />
+                    </a>
+                </div>
+                <div class="galleryItem">
+                    <a href="/img/6jpg" target="_blank" class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">Sneaker Store</h3>
+                            <p class="cardDescription">
+                                Layout of a landing page for a cosmetics store. The site is checked
+                                using the BEM methodology.
+                            </p>
+                        </div>
+                        <div class="cardHover"></div>
+                        <img src="/img/6.jpg" alt="" class="cardImage" />
+                    </a>
+                </div>
+                <div class="galleryItem">
+                    <a href="/img/7jpg" target="_blank" class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">Car Leasing Calculator</h3>
+                            <p class="cardDescription">
+                                Layout of a landing page for a cosmetics store. The site is checked
+                                using the BEM methodology.
+                            </p>
+                        </div>
+                        <div class="cardHover"></div>
+                        <img src="/img/7.jpg" alt="" class="cardImage" />
+                    </a>
+                </div>
+                <div class="galleryItem">
+                    <a href="/img/8.jpg" target="_blank" class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">Social Network</h3>
+                            <p class="cardDescription">
+                                Layout of a landing page for a cosmetics store. The site is checked
+                                using the BEM methodology.
+                            </p>
+                        </div>
+                        <div class="cardHover"></div>
+                        <img src="/img/8.jpg" alt="" class="cardImage" />
+                    </a>
+                </div>
+                <div class="galleryItem">
+                    <a href="/img/9.jpg" target="_blank" class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">Social Network</h3>
+                            <p class="cardDescription">
+                                Layout of a landing page for a cosmetics store. The site is checked
+                                using the BEM methodology.
+                            </p>
+                        </div>
+                        <div class="cardHover"></div>
+                        <img src="/img/9.jpg" alt="" class="cardImage" />
+                    </a>
+                </div>
+                <div class="galleryItem">
+                    <a href="/img/10.jpg" target="_blank" class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">Social Network</h3>
+                            <p class="cardDescription">
+                                Layout of a landing page for a cosmetics store. The site is checked
+                                using the BEM methodology.
+                            </p>
+                        </div>
+                        <div class="cardHover"></div>
+                        <img src="/img/10.jpg" alt="" class="cardImage" />
+                    </a>
+                </div>
+                <div class="galleryItem">
+                    <a href="/img/11.jpg" target="_blank" class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">Social Network</h3>
+                            <p class="cardDescription">
+                                Layout of a landing page for a cosmetics store. The site is checked
+                                using the BEM methodology.
+                            </p>
+                        </div>
+                        <div class="cardHover"></div>
+                        <img src="/img/11.jpg" alt="" class="cardImage" />
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <script src="./js/index.js"></script>
-        <script src="./js/gallery.js"></script>
-        <!-- <script src="./js/cursor.js"></script> -->
-        <script src="./js/anim.js"></script>
     </body>
 </html>
