@@ -51,63 +51,61 @@ class ExplositionGallery {
         this.size = this.linkNodes.length;
 
         this.data = [
-            [
-                {
-                    src: "/images/gallery/1.jpg",
-                    title: "Spider plant",
-                    description: "Pet friendly",
-                },
-                {
-                    src: "/images/gallery/2.jpg",
-                    title: "Pilea Peperomioides",
-                    description: "Ideal for beginners",
-                },
-                {
-                    src: "/images/gallery/3.jpg",
-                    title: "Swiss Cheese Plant",
-                    description: "Toxic to pets",
-                },
-                {
-                    src: "/images/gallery/4.jpg",
-                    title: "The Unkillables plant bundle",
-                    description: "Outdoor plant",
-                },
-                {
-                    src: "/images/gallery/5.jpg",
-                    title: "Pineapple plant",
-                    description: "Indoor plant",
-                },
-                {
-                    src: "/images/gallery/6.jpg",
-                    title: "Rubber plant",
-                    description: "Low light levels",
-                },
-                {
-                    src: "/images/gallery/7.jpg",
-                    title: "Snake plant",
-                    description: "Ideal for beginners",
-                },
-                {
-                    src: "/images/gallery/8.jpg",
-                    title: "ZZ plant",
-                    description: "Low light levels",
-                },
-                {
-                    src: "/images/gallery/9.jpg",
-                    title: "Sansevieria Zeylanica Fan",
-                    description: "Ideal for beginners",
-                },
-                {
-                    src: "/images/gallery/10.jpg",
-                    title: "Swiss Cheese Plant",
-                    description: "Patterned leaves",
-                },
-                {
-                    src: "/images/gallery/11.jpg",
-                    title: "Variegated Rubber plant",
-                    description: "Ideal for beginners",
-                },
-            ],
+            {
+                src: "/images/gallery/1.jpg",
+                title: "Spider plant",
+                description: "Pet friendly",
+            },
+            {
+                src: "/images/gallery/2.jpg",
+                title: "Pilea Peperomioides",
+                description: "Ideal for beginners",
+            },
+            {
+                src: "/images/gallery/3.jpg",
+                title: "Swiss Cheese Plant",
+                description: "Toxic to pets",
+            },
+            {
+                src: "/images/gallery/4.jpg",
+                title: "The Unkillables plant bundle",
+                description: "Outdoor plant",
+            },
+            {
+                src: "/images/gallery/5.jpg",
+                title: "Pineapple plant",
+                description: "Indoor plant",
+            },
+            {
+                src: "/images/gallery/6.jpg",
+                title: "Rubber plant",
+                description: "Low light levels",
+            },
+            {
+                src: "/images/gallery/7.jpg",
+                title: "Snake plant",
+                description: "Ideal for beginners",
+            },
+            {
+                src: "/images/gallery/8.jpg",
+                title: "ZZ plant",
+                description: "Low light levels",
+            },
+            {
+                src: "/images/gallery/9.jpg",
+                title: "Sansevieria Zeylanica Fan",
+                description: "Ideal for beginners",
+            },
+            {
+                src: "/images/gallery/10.jpg",
+                title: "Swiss Cheese Plant",
+                description: "Patterned leaves",
+            },
+            {
+                src: "/images/gallery/11.jpg",
+                title: "Variegated Rubber plant",
+                description: "Ideal for beginners",
+            },
         ];
 
         this.initModal();
@@ -123,24 +121,6 @@ class ExplositionGallery {
         <p class="${explosionDescriptionClassName}"></p>
         <div class="${explosionSummaryClassName}">
             <div class="${explosionSummaryContentClassName}">
-                
-                
-                <div class="project__buttons">
-                    <form
-                    class="${explosionGitClassName}"
-                        target="_blank"
-                    >
-                        <button class="button project__button">GitHub</button>
-                    </form>
-                    <form
-                    class="${explosionSiteClassName}"
-                        target="_blank"
-                    >
-                        <button class="${explosionButtonSiteClassName}">
-                            Live site
-                        </button>
-                    </form>
-                </div>
 
             </div>
         </div>
@@ -362,14 +342,6 @@ class ExplositionGallery {
             setTimeout(() => {
                 this.explosionTitleNode.innerText = content.title;
                 this.explosionDescriptionNode.innerText = content.description;
-                this.explosionGitNode.setAttribute("action", `${content.git}`);
-
-                {
-                    content.site === "#"
-                        ? this.explosionButtonSiteNode.classList.add("disabled")
-                        : this.explosionSiteNode.setAttribute("action", `${content.site}`);
-                }
-
                 this.explosionSummaryContentNode.style.opacity = 1;
                 this.explosionTitleNode.style.opacity = 1;
                 this.explosionDescriptionNode.style.opacity = 1;
@@ -377,13 +349,6 @@ class ExplositionGallery {
         } else {
             this.explosionTitleNode.innerText = content.title;
             this.explosionDescriptionNode.innerText = content.description;
-            this.explosionGitNode.setAttribute("action", `${content.git}`);
-            this.explosionSiteNode.setAttribute("action", `${content.site}`);
-            {
-                content.site === "#"
-                    ? this.explosionButtonSiteNode.classList.add("disabled")
-                    : this.explosionSiteNode.setAttribute("action", `${content.site}`);
-            }
         }
     }
 
