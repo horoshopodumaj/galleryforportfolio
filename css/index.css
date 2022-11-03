@@ -150,6 +150,10 @@ h6 {
   transform: scale(0.001);
 }
 
+.projects {
+  min-width: 1000px;
+  padding: 2.5rem 2rem;
+}
 .projects__title {
   font-size: 3rem;
   font-weight: 700;
@@ -173,10 +177,11 @@ h6 {
 .galleryItem {
   display: inline-block;
   width: 25%;
-  padding-bottom: 36%;
+  padding-bottom: 29%;
   height: 0;
   position: relative;
   vertical-align: top;
+  float: left;
 }
 
 .card {
@@ -245,7 +250,7 @@ h6 {
   right: 0;
   width: 100vw;
   background-color: var(--white);
-  min-width: 320px;
+  min-width: 1000px;
   min-height: 600px;
   z-index: 999;
   color: var(--black);

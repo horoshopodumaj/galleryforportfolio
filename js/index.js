@@ -43,7 +43,7 @@ class ExplositionGallery {
         this.containerNode = elementNode;
         this.linkNodes = elementNode.querySelectorAll(this.options.linkClass);
 
-        this.minWidth = 320;
+        this.minWidth = 1000;
         this.minHeight = 600;
         this.padding = 2 * 16;
         this.showingCount = 4;
