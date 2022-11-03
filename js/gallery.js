@@ -323,7 +323,15 @@ class ExplositionGallery {
                 this.explosionImageNodes[index].style.width = data.width + "px";
                 this.explosionImageNodes[index].style.height = data.height + "px";
             });
-        } else {
+        }
+        if (screenWidth < 800 && screenWidth >= 500) {
+            this.linkNodes.forEach((linkNode, index) => {
+                const data = linkNode.getBoundingClientRect();
+                this.explosionImageNodes[index].style.width = data.width + 100 + "px";
+                this.explosionImageNodes[index].style.height = data.height + 100 + "px";
+            });
+        }
+        if (screenWidth < 500) {
             this.linkNodes.forEach((linkNode, index) => {
                 const data = linkNode.getBoundingClientRect();
                 this.explosionImageNodes[index].style.width = data.width + 100 + "px";
@@ -592,7 +600,7 @@ class ExplositionGallery {
 
             this.explosionActiveImageNodes.forEach((node) => {
                 this.setImageStyles(node, {
-                    top: (modalHeight - imageHeight - 400) / 1.7,
+                    top: (modalHeight - imageHeight - modalHeight / 3) / 1.7,
                     left: (modalWidth - imageWidth - 100) / 2,
                     opacity: 1,
                     zIndex: 5,
@@ -664,10 +672,10 @@ class ExplositionGallery {
                     border: `none`,
                 });
             });
-
+            console.log(modalHeight);
             this.explosionActiveImageNodes.forEach((node) => {
                 this.setImageStyles(node, {
-                    top: (modalHeight - imageHeight - 400) / 2,
+                    top: (modalHeight - imageHeight - modalHeight / 3) / 2,
                     left: (modalWidth - imageWidth - 100) / 2,
                     opacity: 1,
                     zIndex: 5,

@@ -148,7 +148,7 @@
 .gallery {
     &Item {
         display: inline-block;
-        width: 32.3333%;
+        width: 25%;
         padding-bottom: 36%;
         height: 0;
         position: relative;
@@ -176,7 +176,6 @@
         z-index: 1;
         transform: scale(1);
         transition: transform 3s;
-        //padding: 40px;
     }
     &Content,
     &Hover,
